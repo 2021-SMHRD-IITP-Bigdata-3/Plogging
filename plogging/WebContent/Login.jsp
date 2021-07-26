@@ -48,7 +48,7 @@
 </table>
 <div align = "center"><input type = "submit" value = "로그인"></div>
 <div align="right"><input type = "button" value = "아이디찾기 / 비밀번호 착기"></div>
-<br><br><br><br>
+<br><br><br><br><br>
 <table>
 <tr>
 	<td><input type="button" value="메인"></td>
