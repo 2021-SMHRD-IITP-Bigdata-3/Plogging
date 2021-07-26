@@ -19,6 +19,7 @@ public class boardDTO {
 		this.postContent = postContent;
 		this.postTitle = postTitle;
 	}
+	
 	public int getNum() {
 		return num;
 	}
