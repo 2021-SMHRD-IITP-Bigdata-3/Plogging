@@ -7,18 +7,16 @@ public class memberDTO {
 	private String name;
 	private String age;
 	private String addr;
-	private int point;
 	private String plogging;
 	
 	
-	public memberDTO(String id, String pw, String name, String age, String addr, int point, String plogging) {
+	public memberDTO(String id, String pw, String name, String age, String addr, String plogging) {
 		super();
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
 		this.age = age;
 		this.addr = addr;
-		this.point = point;
 		this.plogging = plogging;
 	}
 	
@@ -53,12 +51,7 @@ public class memberDTO {
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
-	public int getPoint() {
-		return point;
-	}
-	public void setPoint(int point) {
-		this.point = point;
-	}
+
 	public String getPlogging() {
 		return plogging;
 	}
