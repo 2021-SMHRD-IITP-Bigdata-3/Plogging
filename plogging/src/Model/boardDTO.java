@@ -7,10 +7,13 @@ public class boardDTO {
 	private String postDate;
 	private String postPhoto;
 	private String postContent;
-	private int postTitle;
-
+	private String postTitle;
 	
-	public boardDTO(int num, String id, String postDate, String postPhoto, String postContent, int postTitle) {
+	
+	
+	
+	
+	public boardDTO(int num, String id, String postDate, String postPhoto, String postContent, String postTitle) {
 		super();
 		this.num = num;
 		this.id = id;
@@ -49,12 +52,14 @@ public class boardDTO {
 	public void setPostContent(String postContent) {
 		this.postContent = postContent;
 	}
-	public int getPostTitle() {
+	public String getPostTitle() {
 		return postTitle;
 	}
-	public void setPostTitle(int postTitle) {
+	public void setPostTitle(String postTitle) {
 		this.postTitle = postTitle;
 	}
+
+	
 	
 	
 	
