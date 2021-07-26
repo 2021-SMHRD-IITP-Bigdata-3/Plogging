@@ -105,7 +105,7 @@
 		<!-- 인원수 -->
 	</tr>
 </table>
-<br><br><br><br><br>
+<br><br><br><br>
 <table>
 <tr>
 	<td><input type="button" value="메인"></td>
