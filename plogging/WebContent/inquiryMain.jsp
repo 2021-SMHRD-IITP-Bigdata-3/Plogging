@@ -14,6 +14,10 @@
     border: 1px solid #444444;
     padding: 10px;
 	}
+	textarea {
+    width: 200px;
+    height: 25px;
+    }
 </style>
 </head>
 <body>
@@ -25,6 +29,27 @@
 </tr>
 </table>
 <br><br><br><br><br>
+<table>
+	
+	<tr>
+		<div align = "left">공고 조회</div>
+	</tr>
+	<tr>
+		<td>
+			<select value ="지역">
+				<option value = 1>광주
+				<option value = 2>서울
+				<option value = 3>경주
+				<option value = 4>부산
+			</select>
+		</td>
+		<td>
+			<div>
+				<textarea placeholder="비밀번호 입력"></textarea>
+			</div>
+		</td>
+	</tr>
+</table>
 <table >
 	<tr>맞춤형 공고</tr>
 	<tr>
@@ -67,22 +92,20 @@
 		<!-- 인원수 -->
 	</tr>
 </table>
+<br><br>
 <table>
-<tr>
-	<td>후기</td>
-</tr>	
-<tr>
-	<td>- <!-- 후기 제목 --></td>
-</tr>
-<tr>
-	<td>- <!-- 후기 제목 --></td>
-</tr>
-<tr>
-	<td>- <!-- 후기 제목 --></td>
-</tr>
-
+	<tr>
+		<td><input type = "button" value = "<<"></td>
+		<td><input type = "button" value = "1"></td>
+		<td><input type = "button" value = "2"></td>
+		<td><input type = "button" value = "3"></td>
+		<td><input type = "button" value = "4"></td>
+		<td><input type = "button" value = "5"></td>
+		<td><input type = "button" value = ">>"></td>
+		<!-- 인원수 -->
+	</tr>
 </table>
-<br><br><br><br><br>
+<br><br>
 <table>
 <tr>
 	<td><input type="button" value="메인"></td>
