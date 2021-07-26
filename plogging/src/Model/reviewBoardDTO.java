@@ -8,12 +8,12 @@ public class reviewBoardDTO {
 	private String postPhoto;
 	private String location;
 	private String postContent;
-	private int postTitle;
+	private String postTitle;
 	private String checkBox;
 	private int run;
 	
 	public reviewBoardDTO(String postNumber, String id, String postDate, String postPhoto, String location,
-			String postContent, int postTitle, String checkBox, int run) {
+			String postContent, String postTitle, String checkBox, int run) {
 		super();
 		this.postNumber = postNumber;
 		this.id = id;
@@ -63,10 +63,10 @@ public class reviewBoardDTO {
 	public void setPostContent(String postContent) {
 		this.postContent = postContent;
 	}
-	public int getPostTitle() {
+	public String getPostTitle() {
 		return postTitle;
 	}
-	public void setPostTitle(int postTitle) {
+	public void setPostTitle(String postTitle) {
 		this.postTitle = postTitle;
 	}
 	public String getCheckBox() {
