@@ -15,7 +15,7 @@
 <div>
 	<table>
 	<tr>
-	   <td>싸이트명</td>
+	   <td>싸이트명ㅇㅇ</td>
 	   <td style = "float : right"><input type ="button" value = "내정보 검색"></td>
 	   <td style = "float : right"><input type ="button" value = "검색"></td>
 	</tr>
