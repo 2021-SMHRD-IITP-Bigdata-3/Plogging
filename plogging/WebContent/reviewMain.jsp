@@ -30,7 +30,7 @@ align : center;
    <div>
    <table border='1px' style='height:100px;'>
    <tr>
-     <td> 자유 게시판</td>
+     <td>후기게시판</td>
      <td><input type="button" value="글쓰기" style='float: right;'></tr>
       </table>
       <table border='1px' style='height:100px;'>
