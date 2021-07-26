@@ -53,7 +53,7 @@
 		<td><input type = "button" value = "신청"></td>
 		<!-- 인원수 -->
 	</tr>
-		<tr>
+	<tr>
 		<td>플로깅 기한 :</td>
 		<!-- 기한!~!! -->
 		<td><div style="color: green;">사진</div></td>

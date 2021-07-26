@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <style>
 table{
+width : 360px;
 align : center;
 }
 </style>
@@ -19,13 +20,25 @@ align : center;
    <td style = "float : right"><input type ="button" value = "검색"></td>
 </tr>
 </table>
-<div>
-<table border='1px' style='height:100px;'>
-<tr>
-<td>지도</td>
-</tr>
-</table>
+<div id="map" style="width:340px;height:340px;" align ='center'></div>
+	<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=72d306962d4f7f31bb4597d71782852b"></script>
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = {
+		        center: new kakao.maps.LatLng(35.149836, 126.919865), // 지도의 중심좌표
+		        level: 4, // 지도의 확대 레벨
+		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+		    }; 
 
+		// 지도를 생성한다 
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+		// 지도에 마커를 생성하고 표시한다
+		var marker = new kakao.maps.Marker({
+		    position: new kakao.maps.LatLng(35.149836, 126.919865), // 마커의 좌표
+		    map: map // 마커를 표시할 지도 객체
+		});
+	</script>
 </div>
    <div>
    <table border='1px' style='height:100px;'>
