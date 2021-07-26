@@ -28,24 +28,17 @@
 				</td>
 			</tr>
 			<tr>
-				<td> 날짜 및 시간 </td>
+				<td colspan = "2"> 날짜 및 시간 </td>
 				<td> 조회수 </td>
 				<td> 닉네임 </td>
-				<td> 장소 </td>
 			</tr>
 			<tr> <td colspan = "4" height = "300">게시 내용 </td></tr>
-			<tr> <td colspan = "1"> 쓰레기 양 </td><td colspan = "3"> 20L </td></tr>
-			<tr> <td colspan = "1"> 플로깅 거리 </td><td colspan = "3"> 2km </td></tr>
-			<tr>
-				<td colspan = "4"> 지도	</td>
-			</tr>
-			<tr>
 				<td colspan = "2"></td>
 				<td> <input type = "submit" value = "수정"> </td>
 				<td> <input type = "submit" value = "삭제"> </td>
 			</tr>			
 		</table>
-				<table  border = "1px">
+		<table  border = "1px">
 		<tr>
 		   <td colspan = "4"> 댓글 </td>
 		</tr>
@@ -73,13 +66,6 @@
 		   <td><input type="button" value="후기"></td>
 		   <td><input type="button" value="게시판"></td>
 		   <td><input type="button" value="제보"></td>
-		</tr>
-		<tr>
-		   <td>메인</td>
-		   <td>조회</td>
-		   <td>후기</td>
-		   <td>게시판</td>
-		   <td>제보</td>
 		</tr>
 		</table>
 	</form>
