@@ -82,7 +82,7 @@
 </tr>
 
 </table>
-<br><br><br><br><br>
+<br><br><br><br>
 <table>
 <tr>
 	<td><input type="button" value="¸ÞÀÎ"></td>
