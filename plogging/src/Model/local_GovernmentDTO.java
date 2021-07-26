@@ -14,7 +14,7 @@ public class local_GovernmentDTO {
 	
 	public local_GovernmentDTO(String gid, String list, String id, String postContents) {
 		super();
-		Gid = gid;
+		this.Gid = gid;
 		this.list = list;
 		this.id = id;
 		this.postContents = postContents;
@@ -23,7 +23,7 @@ public class local_GovernmentDTO {
 		return Gid;
 	}
 	public void setGid(String gid) {
-		Gid = gid;
+		this.Gid = gid;
 	}
 	public String getList() {
 		return list;
