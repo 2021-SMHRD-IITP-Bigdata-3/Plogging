@@ -44,8 +44,8 @@
 			</select>
 		</td>
 		<td>
-			<div>
-				<textarea placeholder="비밀번호 입력"></textarea>
+			<div><textarea placeholder="비밀번호 입력">
+</textarea>
 			</div>
 		</td>
 	</tr>
