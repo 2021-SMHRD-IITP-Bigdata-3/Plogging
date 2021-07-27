@@ -10,6 +10,14 @@ create table board(
 	constraint memver_id_fk foreign key(memver_id) references member(memver_id)
 );
 
+시퀀스 num_board
+create sequence num_board
+start with 1 -- 시작숫자
+increment by 1; -- 증감숫자
+minvalue -- 최소값
+maxvalue -- 최대값
+nocycle -- 반복지정
+
 게시판댓글 board_num
 create table board_num(
 	comments_number varchar2(100),
@@ -22,6 +30,14 @@ create table board_num(
 	constraint board_num_fk foreign key(board_num) references board(board_num)
 	constraint memver_id_fk foreign key(memver_id) references member(memver_id)
 );
+
+시퀀스 num_board_num
+create sequence num_board_num
+start with 1 -- 시작숫자
+increment by 1; -- 증감숫자
+minvalue -- 최소값
+maxvalue -- 최대값
+nocycle -- 반복지정
 
 사용자 member
 create table member(
@@ -59,6 +75,14 @@ create table review_board(
 	constraint user_board_fk foreign key(user_board) references notice(user_board)
 );
 
+시퀀스 num_review_board
+create sequence num_review_board
+start with 1 -- 시작숫자
+increment by 1; -- 증감숫자
+minvalue -- 최소값
+maxvalue -- 최대값
+nocycle -- 반복지정
+
 지도 map
 create table map(
 	gps varchar2(100),
@@ -83,6 +107,22 @@ create table notice(
 	constraint notice_post_fk foreign key(notice_post) references local_governments(notice_post)
 );
 
+시퀀스 num_notice_number
+create sequence num_notice_number
+start with 1 -- 시작숫자
+increment by 1; -- 증감숫자
+minvalue -- 최소값
+maxvalue -- 최대값
+nocycle -- 반복지정
+
+시퀀스 num_user_board
+create sequence num_user_board
+start with 1 -- 시작숫자
+increment by 1; -- 증감숫자
+minvalue -- 최소값
+maxvalue -- 최대값
+nocycle -- 반복지정
+
 지자체 local_governments
 create table local_governments(
 	notice_post varchar2(100),
@@ -91,6 +131,14 @@ create table local_governments(
 	notice_member varchar2(100),
 	constraint local_governments_pk primary key (notice_post, point)
 );
+
+시퀀스 num_local_governments
+create sequence num_local_governments
+start with 1 -- 시작숫자
+increment by 1; -- 증감숫자
+minvalue -- 최소값
+maxvalue -- 최대값
+nocycle -- 반복지정
 
 플로깅내역 untitled
 create table untitled(
