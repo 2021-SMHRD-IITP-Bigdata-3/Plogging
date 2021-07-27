@@ -31,7 +31,7 @@ align : center;
    <table border='1px' style='height:100px;'>
    <tr>
      <td>후기게시판</td>
-     <td><input type="button" value="글쓰기" style='float: right;'></tr>
+     <td><input type="button" value="글쓰기" style='float: right;' onClick="location.href='reviewWrite7.jsp'"></tr>
       </table>
       <table border='1px' style='height:100px;'>
          <tr>

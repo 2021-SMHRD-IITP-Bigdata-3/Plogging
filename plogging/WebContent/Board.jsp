@@ -26,7 +26,7 @@ div{
 		</table>
 	</div>
 	<div>
-		자유 게시판<input type="button" value="글쓰기" style='float: right;'><br><br>
+		자유 게시판<input type="button" value="글쓰기" style='float: right;' onClick="location.href='BoardWrite9.jsp'"><br><br>
 		<table border='1px' style='height:100px;'>
 			<tr>
 			<!-- 작성한 제목 -->
