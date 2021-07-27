@@ -25,7 +25,7 @@ create table board_num(
 	member_id varchar2(100),
 	comments_pw varchar2(100),
 	comments_contents varchar2(100),
-	comments_date date,
+	comments_date date, --sysdate;
 	constraint board_num_pk primary key (comments_number)
 	constraint board_num_fk foreign key(board_num) references board(board_num)
 	constraint member_id_fk foreign key(member_id) references member(member_id)

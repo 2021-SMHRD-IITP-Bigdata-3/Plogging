@@ -4,12 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class boardReDAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
-	//
+	boardReDTO dto = null;
 	
 	int cnt = 0;
 	
@@ -48,4 +49,54 @@ public class boardReDAO {
 			e.printStackTrace();
 		}
 	}
+	public int upload(boardReDTO dto) {
+		try {
+			conn();
+			String sql = "INSERT INTO board_num VALUES(num_board_num.nextval,?,?,?,?,sysdate)";
+		
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, dto.getCommentsNumber());
+			psmt.setString(2, dto.getBoardNum());
+			psmt.setString(3, dto.getMemberID());
+			psmt.setString(4, dto.getCommentsPw());
+			psmt.setString(5, dto.getCommentsContents());
+			
+			
+			cnt = psmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		} return cnt;
+	}
+	
+	public boardReDTO showOne(int num) {
+		try {
+			conn();
+			String sql = "SELECT * FROM board WHERE num = ?";
+			
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, num);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				String commentsNumber = rs.getString(2);
+				String boardNum = rs.getString(3);
+				String memberID = rs.getString(4);
+				String commentsPw = rs.getString(5);
+				String commentsContents=rs.getString(6);
+				String commentsDate = rs.getString(7);
+				
+				dto = new boardReDTO(num, commentsNumber, boardNum, memberID, commentsPw, commentsContents, commentsDate);
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		} return dto;
+	}
+	
 }
