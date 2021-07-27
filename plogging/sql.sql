@@ -7,7 +7,7 @@ create table board(
 	board_title varchar2(100),
 	board_image varchar2(100),
 	constraint board_pk primary key (board_num)
-	constraint memver_id_fk foreign key(memver_id) references member(memver_id)
+	constraint member_id_fk foreign key(member_id) references member(member_id)
 );
 
 시퀀스 num_board
@@ -28,7 +28,7 @@ create table board_num(
 	comments_date date,
 	constraint board_num_pk primary key (comments_number)
 	constraint board_num_fk foreign key(board_num) references board(board_num)
-	constraint memver_id_fk foreign key(memver_id) references member(memver_id)
+	constraint member_id_fk foreign key(member_id) references member(member_id)
 );
 
 시퀀스 num_board_num
@@ -51,7 +51,7 @@ create table member(
 	point number,
 	user_board varchar2(100),
 	member_plog_count number,
-	constraint member_pk primary key (memver_id)	
+	constraint member_pk primary key (member_id)	
 );
 
 후기게시판 review_board
@@ -69,7 +69,7 @@ create table review_board(
 	check varchar2(100),
 	run varchar2(100),
 	constraint review_board_pk primary key (review_number)
-	constraint memver_id_fk foreign key(memver_id) references member(memver_id)
+	constraint member_id_fk foreign key(member_id) references member(member_id)
 	constraint notice_number_fk foreign key(notice_number) references notice(notice_number)
 	constraint notice_post_fk foreign key(notice_post) references local_governments(notice_post)
 	constraint user_board_fk foreign key(user_board) references notice(user_board)
@@ -145,7 +145,7 @@ create table untitled(
 	member_id varchar2(100),
 	notice_number varchar2(100),
 	point varchar2(100),
-	constraint memver_id_fk foreign key(memver_id) references member(memver_id)
+	constraint member_id_fk foreign key(member_id) references member(member_id)
 	constraint notice_number_fk foreign key(notice_number) references notice(notice_number)
 	constraint point_fk foreign key(point) references local_governments(point)
 );
