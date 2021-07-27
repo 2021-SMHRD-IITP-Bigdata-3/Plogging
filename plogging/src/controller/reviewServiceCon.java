@@ -19,26 +19,32 @@ public class reviewServiceCon extends HttpServlet {
 		request.setCharacterEncoding("EUC-KR");
 		//
 		int reviewNumber = Integer.parseInt(request.getParameter("reviewNumber"));
-		String id = request.getParameter("id");
-		String postDate = request.getParameter("postDate");
-		String postPhoto = request.getParameter("postPhoto");
+		String memberId = request.getParameter("memberId");
+		String noticeNumber = request.getParameter("noticeNumber");
+		String noticePost = request.getParameter("noticePost");
+		String userBoard = request.getParameter("userBoard");
+		String reviewDate = request.getParameter("reviewDate");
+		String reviewImage = request.getParameter("reviewImage");
 		String location = request.getParameter("location");
-		String postContent = request.getParameter("postContent");
-		String postTitle = request.getParameter("postTitle");
-		String checkBox = request.getParameter("checkBox");
+		String contents = request.getParameter("contents");
+		String reviewTitle = request.getParameter("reviewTitle");
+		String check = request.getParameter("check");
 		int run = Integer.parseInt(request.getParameter("run"));
 		
 		System.out.println("reviewNumber : "+reviewNumber);
-		System.out.println("id : "+id);
-		System.out.println("postDate : "+postDate);
-		System.out.println("postPhoto : "+postPhoto);
+		System.out.println("memberId : "+memberId);
+		System.out.println("postDate : "+noticeNumber);
+		System.out.println("noticePost : "+noticePost);
+		System.out.println("userBoard : "+userBoard);
+		System.out.println("reviewDate : "+reviewDate);
+		System.out.println("reviewImage : "+reviewImage);
 		System.out.println("location : "+location);
-		System.out.println("postContent : "+postContent);
-		System.out.println("postTitle : "+postTitle);
-		System.out.println("checkBox : "+checkBox);
+		System.out.println("contents : "+contents);
+		System.out.println("reviewTitle : "+reviewTitle);
+		System.out.println("check : "+check);
 		System.out.println("run : "+run);
 		
-		reviewBoardDTO dto = new reviewBoardDTO(reviewNumber,id,postDate,postPhoto,location,postContent,postTitle,checkBox,run);
+		reviewBoardDTO dto = new reviewBoardDTO(reviewNumber,memberId,noticeNumber,noticePost,userBoard,reviewDate,reviewImage,location,contents,reviewTitle,check,run);
 		reviewBoardDAO dao = new reviewBoardDAO();
 		
 		response.sendRedirect("reviewMain.jsp");
