@@ -22,7 +22,7 @@ nocycle -- 반복지정
 create table board_num(
 	comments_number varchar2(100),
 	board_num varchar2(100),
-	memver_id varchar2(100),
+	member_id varchar2(100),
 	comments_pw varchar2(100),
 	comments_contents varchar2(100),
 	comments_date date,
@@ -41,12 +41,12 @@ nocycle -- 반복지정
 
 사용자 member
 create table member(
-	memver_id varchar2(100),
-	memver_pw varchar2(100),
-	memver_name varchar2(100),
+	member_id varchar2(100),
+	member_pw varchar2(100),
+	member_name varchar2(100),
 	member_age number,
-	memver_point varchar2(100),
-	memver_addr varchar2(100),
+	member_point varchar2(100),
+	member_addr varchar2(100),
 	member_plog_own char(20),
 	point number,
 	user_board varchar2(100),
@@ -57,7 +57,7 @@ create table member(
 후기게시판 review_board
 create table review_board(
 	review_number number,
-	memver_id varbhar2(100),
+	member_id varbhar2(100),
 	notice_number varbhar2(100),
 	notice_post varbhar2(100),
 	user_board varbhar2(100),
@@ -142,7 +142,7 @@ nocycle -- 반복지정
 
 플로깅내역 untitled
 create table untitled(
-	memver_id varchar2(100),
+	member_id varchar2(100),
 	notice_number varchar2(100),
 	point varchar2(100),
 	constraint memver_id_fk foreign key(memver_id) references member(memver_id)
