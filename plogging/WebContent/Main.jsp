@@ -1,3 +1,6 @@
+<%@page import="Model.reviewBoardDTO"%>
+<%@page import="Model.notic_BoardDTO"%>
+<%@page import="Model.boardDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -17,7 +20,11 @@
 </style>
 </head>
 <body>
-
+<%
+boardDTO info = (boardDTO) session.getAttribute("info");
+notic_BoardDTO info1 = (notic_BoardDTO) session.getAttribute("info1");
+reviewBoardDTO info2 = (reviewBoardDTO) session.getAttribute("info2");
+%>
 <table>
 <tr>
 	<td>싸이트명</td>
@@ -27,15 +34,16 @@
 </table>
 
 <br><br><br><br><br>
+
 <table >
 	<tr>맞춤형 공고</tr>
 	<tr>
-		<td>플로깅 기한 :</td>
+		<td>플로깅 기한 :<%if(info !=null){ %><span><%=info.getBoardDate() %> </span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
 		<!-- 기한!~!! -->
-		<td><div style="color: green;">사진</div></td>
+		<td><div>사진<%if(info1 !=null){ %><span><%=info1.getNoticeImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
 	</tr>
 	<tr >
-		<td>제한 인원수</td>
+		<td>제한 인원수<%if(info1 !=null){ %><span><%=info1.getNoticeMember() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
 		<!-- 인원수 -->
 	</tr>
 	<tr>
@@ -43,12 +51,12 @@
 		<!-- 인원수 -->
 	</tr>
 		<tr>
-		<td>플로깅 기한 :</td>
+		<td>플로깅 기한 :<%if(info !=null){ %><span><%=info.getBoardDate() %></span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
 		<!-- 기한!~!! -->
-		<td><div style="color: green;">사진</div></td>
+		<td><div>사진<%if(info1 !=null){ %><span><%=info1.getNoticeImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
 	</tr>
 	<tr >
-		<td>제한 인원수</td>
+		<td>제한 인원수<%if(info1 !=null){ %><span><%=info1.getNoticeMember() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
 		<!-- 인원수 -->
 	</tr>
 	<tr>
@@ -56,12 +64,12 @@
 		<!-- 인원수 -->
 	</tr>
 		<tr>
-		<td>플로깅 기한 :</td>
+		<td>플로깅 기한 :<%if(info !=null){ %><span><%=info.getBoardDate() %></span></span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
 		<!-- 기한!~!! -->
-		<td><div style="color: green;">사진</div></td>
+		<td><div>사진<%if(info1 !=null){ %><span><%=info1.getNoticeImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
 	</tr>
 	<tr >
-		<td>제한 인원수</td>
+		<td>제한 인원수<%if(info1 !=null){ %><span><%=info1.getNoticeMember() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
 		<!-- 인원수 -->
 	</tr>
 	<tr>
@@ -74,13 +82,13 @@
 	<td>후기</td>
 </tr>	
 <tr>
-	<td>- <!-- 후기 제목 --></td>
+	<td>- <%if(info2 !=null){ %><span><%=info2.getReviewTitle() %></span></span><%}else{%><span>후기게시글이 없습니다.</span><%} %></td>
 </tr>
 <tr>
-	<td>- <!-- 후기 제목 --></td>
+	<td>- <%if(info2 !=null){ %><span><%=info2.getReviewTitle() %></span></span><%}else{%><span>후기게시글이 없습니다.</span><%} %></td>
 </tr>
 <tr>
-	<td>- <!-- 후기 제목 --></td>
+	<td>- <%if(info2 !=null){ %><span><%=info2.getReviewTitle() %></span></span><%}else{%><span>후기게시글이 없습니다.</span><%} %></td>
 </tr>
 
 </table>
