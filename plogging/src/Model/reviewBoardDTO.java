@@ -15,6 +15,7 @@ public class reviewBoardDTO {
 	private String check;
 	private int run;
 	
+	
 	public reviewBoardDTO(int reviewNumber, String memberId, String noticeNumber, String noticePost, String userBoard,
 			String reviewDate, String reviewImage, String location, String contents, String reviewTitle, String check,
 			int run) {

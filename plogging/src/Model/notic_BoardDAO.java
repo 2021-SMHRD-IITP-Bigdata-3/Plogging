@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 
 public class notic_BoardDAO {
 	Connection conn = null;
@@ -12,6 +15,7 @@ public class notic_BoardDAO {
 	
 	
 	int cnt = 0;
+	notic_BoardDTO dto = null;
 	
 	public void conn() {
 		try {
@@ -48,4 +52,92 @@ public class notic_BoardDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	// 이미지 업로드 메소드
+			public int upload(notic_BoardDTO dto) {
+				try {
+					conn();
+					String sql = "insert into notice values(num_notice_number.nextval, ?,?, sysdate,?,?,?,?,?,?)";
+					psmt = conn.prepareStatement(sql);
+					psmt.setString(1, dto.getUserBoard());
+					psmt.setString(2, dto.getNoticePost());
+					psmt.setString(3, dto.getNoticeTitle());
+					psmt.setString(4, dto.getNoticeImage());
+					psmt.setString(5, dto.getNoticeMember());
+					psmt.setString(6, dto.getLimitedNumber());
+					psmt.setString(7, dto.getAddress());
+					psmt.setString(8, dto.getPlogDate());
+					
+					cnt = psmt.executeUpdate();
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}finally {
+					close();
+				}return cnt;
+			}
+			
+			// 전체게시글 보여주기 메소드
+			public ArrayList<notic_BoardDTO> showBoard() {
+				ArrayList<notic_BoardDTO> notic_BoardDTO_list = new ArrayList<notic_BoardDTO>();
+				try {
+					conn();
+					String sql = "select * from notice order by b_date desc";
+					psmt = conn.prepareStatement(sql);
+					rs = psmt.executeQuery();
+					
+					while(rs.next()) {
+						int noticeNumber = rs.getInt("noticeNumber");
+						String userBoard = rs.getString("userBoard");
+						String noticePost = rs.getString("noticePost");
+						String noticeDate = rs.getString("noticeDate");
+						String noticeTitle = rs.getString("noticeTitle");
+						String noticeImage = rs.getString("noticeImage");
+						String noticeMember = rs.getString("noticeMember");
+						String limitedNumber = rs.getString("limitedNumber");
+						String address = rs.getString("address");
+						String plogDate = rs.getString("plogDate");
+						
+						notic_BoardDTO dto = new notic_BoardDTO(noticeNumber, userBoard, noticePost,noticeDate,noticeTitle, noticeImage,noticeMember,limitedNumber,address,plogDate);
+						notic_BoardDTO_list.add(dto);
+					}
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}finally {
+					close();
+				}
+				return notic_BoardDTO_list;
+				
+			}
+			
+			// 개별 게시글 보여주기 메소드
+			   public notic_BoardDTO showOne(int notice_number) {
+			      try {
+			         conn();
+			         String sql ="select * from notice_number where review_number = ?";
+			         
+			         psmt = conn.prepareStatement(sql);
+			         psmt.setInt(1, notice_number);
+			         rs = psmt.executeQuery();
+			         
+			         if(rs.next()) {
+			            String userBoard = rs.getString("userBoard");
+			            String noticePost = rs.getString("noticePost");
+			            String noticeDate = rs.getString("noticeDate");
+			            String noticeTitle = rs.getString("noticeTitle");
+			            String noticeImage = rs.getString("noticeImage");
+			            String noticeMember = rs.getString("noticeMember");
+			            String limitedNumber = rs.getString("limitedNumber");
+			            String address = rs.getString("address");
+			            String plogDate = rs.getString("plogDate");			            
+			            
+			            dto = new notic_BoardDTO(notice_number, userBoard,noticePost, noticeDate, noticeTitle, noticeImage, noticeMember,limitedNumber,address,plogDate);
+			         }
+			      } catch (SQLException e) {
+			         e.printStackTrace();
+			      } finally {
+			         close();
+			      } return dto;
+			   }
 }
