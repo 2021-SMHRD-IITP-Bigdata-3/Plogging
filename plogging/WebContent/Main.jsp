@@ -21,7 +21,7 @@
 <table>
 <tr>
 	<td>싸이트명</td>
-	<td style = "float : right"><input type ="button" value = "내정보 검색"></td>
+	<td style = "float : right"><input type ="button" value = "내정보 검색" onClick="location.href='myPage.jsp'"></td>
 	<td style = "float : right"><input type ="button" value = "검색"></td>
 </tr>
 </table>
