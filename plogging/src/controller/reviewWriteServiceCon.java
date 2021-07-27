@@ -37,8 +37,8 @@ public class reviewWriteServiceCon extends HttpServlet {
 		System.out.println("checkBox : "+checkBox);
 		System.out.println("run : "+run);
 		
-		reviewBoardDTO dto = new reviewBoardDTO(reviewNumber,id,postDate,postPhoto,location,postContent,postTitle,checkBox,run);
-		reviewBoardDAO dao = new reviewBoardDAO();
+//		reviewBoardDTO dto = new reviewBoardDTO(reviewNumber,id,postDate,postPhoto,location,postContent,postTitle,checkBox,run);
+//		reviewBoardDAO dao = new reviewBoardDAO();
 		
 		response.sendRedirect("reviewWrite7.jsp");
 		
