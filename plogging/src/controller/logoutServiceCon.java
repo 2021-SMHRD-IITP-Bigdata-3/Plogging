@@ -23,5 +23,5 @@ public class logoutServiceCon extends HttpServlet {
 				
 				response.sendRedirect("Main.jsp");
 	}
-
+//
 }

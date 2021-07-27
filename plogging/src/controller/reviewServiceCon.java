@@ -17,7 +17,7 @@ public class reviewServiceCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("EUC-KR");
-		
+		//
 		int reviewNumber = Integer.parseInt(request.getParameter("reviewNumber"));
 		String id = request.getParameter("id");
 		String postDate = request.getParameter("postDate");

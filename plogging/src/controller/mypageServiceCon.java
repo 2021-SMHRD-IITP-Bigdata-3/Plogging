@@ -30,7 +30,7 @@ public class mypageServiceCon extends HttpServlet {
 		System.out.println("age : "+age);
 		System.out.println("addr : "+addr);
 		System.out.println("plogging : "+plogging);
-
+//
 		memberDTO dto = new memberDTO(id, pw, name, age,addr, plogging);
 		memberDAO dao = new memberDAO();
 		

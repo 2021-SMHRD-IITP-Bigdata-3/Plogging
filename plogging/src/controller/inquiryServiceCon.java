@@ -35,7 +35,7 @@ public class inquiryServiceCon extends HttpServlet {
 		
 		notic_BoardDTO dto = new notic_BoardDTO(location, ploggingDate, postPhoto, peopleLimit,postNumber, list);
 		notic_BoardDAO dao = new notic_BoardDAO();
-		
+		//
 		response.sendRedirect("inquiryMain.jsp");
 	}
 

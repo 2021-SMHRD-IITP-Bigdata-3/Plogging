@@ -35,7 +35,7 @@ request.getParameter("EUC-KR");
 		}else {
 			System.out.println("로그인 실패");
 		}
-		
+		//
 		response.sendRedirect("Main.jsp");
 	}
 

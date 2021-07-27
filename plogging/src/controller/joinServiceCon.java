@@ -35,7 +35,7 @@ public class joinServiceCon extends HttpServlet {
 			memberDTO dto = new memberDTO(id, pw, name, age,addr, plogging);
 			memberDAO dao = new memberDAO();
 			int cnt = dao.join(dto);
-
+//
 
 			String moveURL = "";
 			if(cnt>0) {

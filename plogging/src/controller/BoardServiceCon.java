@@ -37,6 +37,6 @@ public class BoardServiceCon extends HttpServlet {
 		boardDAO dao = new boardDAO();
 		
 		response.sendRedirect("Board.jsp");
-	}
+	}//
 
 }

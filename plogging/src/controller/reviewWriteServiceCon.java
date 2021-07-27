@@ -14,7 +14,7 @@ import Model.reviewBoardDTO;
 @WebServlet("/reviewWriteServiceCon")
 public class reviewWriteServiceCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		//
 		request.setCharacterEncoding("EUC-KR");
 		
 		int reviewNumber = Integer.parseInt(request.getParameter("reviewNumber"));

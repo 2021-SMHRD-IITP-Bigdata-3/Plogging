@@ -34,7 +34,7 @@ request.setCharacterEncoding("EUC-KR");
 		boardDAO dao = new boardDAO();
 		
 		response.sendRedirect("BoardWrite9.jsp");
-		
+		//
 		
 	}
 
