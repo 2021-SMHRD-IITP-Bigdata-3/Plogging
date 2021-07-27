@@ -63,7 +63,7 @@ public class reviewBoardDAO {
 					psmt.setString(6, dto.getLocation());
 					psmt.setString(7, dto.getContents());
 					psmt.setString(8, dto.getReviewTitle());
-					psmt.setString(9, dto.getCheck());
+					psmt.setString(9, dto.getCheckBox());
 					psmt.setInt(10, dto.getRun());
 					
 					cnt = psmt.executeUpdate();
@@ -95,10 +95,10 @@ public class reviewBoardDAO {
 						String location = rs.getString("location");
 						String contents = rs.getString("contents");
 						String reviewTitle = rs.getString("reviewTitle");
-						String check = rs.getString("check");
+						String checkBox = rs.getString("checkBox");
 						int run = rs.getInt("run");
 						
-						reviewBoardDTO dto = new reviewBoardDTO(reviewNumber, memberId, noticeNumber,noticePost,userBoard, reviewDate,reviewImage,location,contents,reviewTitle,check,run);
+						reviewBoardDTO dto = new reviewBoardDTO(reviewNumber, memberId, noticeNumber,noticePost,userBoard, reviewDate,reviewImage,location,contents,reviewTitle,checkBox,run);
 						reviewBoard_list.add(dto);
 					}
 					
@@ -131,11 +131,11 @@ public class reviewBoardDAO {
 			            String location = rs.getString("location");
 			            String contents = rs.getString("contents");
 			            String reviewTitle = rs.getString("reviewTitle");
-			            String check = rs.getString("check");
+			            String checkBox = rs.getString("checkBox");
 			            int run = rs.getInt("run");
 			            
 			            
-			            dto = new reviewBoardDTO(review_number, memberId,noticeNumber, noticePost, userBoard, reviewDate, reviewImage,location,contents,reviewTitle,check,run);
+			            dto = new reviewBoardDTO(review_number, memberId,noticeNumber, noticePost, userBoard, reviewDate, reviewImage,location,contents,reviewTitle,checkBox,run);
 			         }
 			      } catch (SQLException e) {
 			         e.printStackTrace();
