@@ -10,6 +10,10 @@ create table board(
 	constraint member_id_fk foreign key(member_id) references member(member_id)
 );
 
+insert into board (board_num,member_id,board_date,board_content,board_title,board_image) values('test','test','sysdate','test','test','test');
+
+
+
 시퀀스 num_board
 create sequence num_board
 start with 1 -- 시작숫자
@@ -30,6 +34,9 @@ create table board_num(
 	constraint board_num_fk foreign key(board_num) references board(board_num)
 	constraint member_id_fk foreign key(member_id) references member(member_id)
 );
+
+insert into board_num(comments_number,board_num,member_id,comments_pw,comments_contents,comments_date) values('test','test','test','test','test','sysdate');
+
 
 시퀀스 num_board_num
 create sequence num_board_num
@@ -54,19 +61,23 @@ create table member(
 	constraint member_pk primary key (member_id)	
 );
 
+insert into member(member_id,member_pw,member_name,member_age,member_point,member_addr,member_plog_own,point,user_board,member_plog_count) values('test','test','test',1,'test','test','o',1,'test',1);
+
+
+
 후기게시판 review_board
 create table review_board(
 	review_number number, --게시물 번호
-	member_id varbhar2(100), -- 아이디
-	notice_number varbhar2(100), -- 공고번호
-	notice_post varbhar2(100), -- 제보게시물
-	user_board varbhar2(100), -- 사용자 제보 게시물
-	review_date date, -- 작성입자
+	member_id varchar2(100), -- 아이디
+	notice_number varchar2(100), -- 공고번호
+	notice_post varchar2(100), -- 제보게시물
+	user_board varchar2(100), -- 사용자 제보 게시물
+	review_date date, -- 작성일자
 	review_image varchar2(100), -- 게시물 사진
 	location varchar2(100), -- 위치정보
 	contents varchar2(1000), -- 게시글 내용
 	review_title varchar2(100), -- 게시글 제목
-	check varchar2(100), --체크박스
+	checkBox varchar2(100), --체크박스
 	run varchar2(100), -- 거리
 	constraint review_board_pk primary key (review_number)
 	constraint member_id_fk foreign key(member_id) references member(member_id)
@@ -74,6 +85,8 @@ create table review_board(
 	constraint notice_post_fk foreign key(notice_post) references local_governments(notice_post)
 	constraint user_board_fk foreign key(user_board) references notice(user_board)
 );
+
+insert into review_board(review_number,member_id,notice_number,notice_post,user_board,review_date,review_image,location,contents,review_title,checkBox,run) values(1,'test','test','test','test','sysdate','test','test','test','test','test','test');
 
 시퀀스 num_review_board
 create sequence num_review_board
@@ -91,6 +104,8 @@ create table map(
 	constraint review_number_fk foreign key(review_number) references review_board(review_number)
 );
 
+insert into map(gps,review_number) values('test',1);
+
 공고 notice
 create table notice(
 	notice_number varchar2(100), -- 공고번호
@@ -106,6 +121,9 @@ create table notice(
 	constraint notice_pk primary key (notice_number, user_board)
 	constraint notice_post_fk foreign key(notice_post) references local_governments(notice_post)
 );
+
+insert into notice(notice_number,user_board,notice_post,notice_date,notice_title,notice_image,notice_member,limited_number,address,plog_date)values('test','test','test','sysdate','test','test','test','test','test','test');
+
 
 시퀀스 num_notice_number
 create sequence num_notice_number
@@ -132,6 +150,8 @@ create table local_governments(
 	constraint local_governments_pk primary key (notice_post, point)
 );
 
+insert into(notice_post,point,local_id,notice_member) values('test','test','test','test');
+
 시퀀스 num_local_governments
 create sequence num_local_governments
 start with 1 -- 시작숫자
@@ -149,3 +169,6 @@ create table untitled(
 	constraint notice_number_fk foreign key(notice_number) references notice(notice_number)
 	constraint point_fk foreign key(point) references local_governments(point)
 );
+
+insert into(member_id,notice_number,point) values('test','test','test');
+
