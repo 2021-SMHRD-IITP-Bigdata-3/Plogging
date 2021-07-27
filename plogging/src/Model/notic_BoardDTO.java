@@ -1,6 +1,6 @@
 package Model;
 
-public class notic_boardDTO {
+public class notic_BoardDTO {
 
 	private String location;
 	private String ploggingDate;
@@ -10,7 +10,7 @@ public class notic_boardDTO {
 	private String list;
 	
 	
-	public notic_boardDTO(String location, String ploggingDate, String postPhoto, String peopleLimit, String postNumber,
+	public notic_BoardDTO(String location, String ploggingDate, String postPhoto, String peopleLimit, String postNumber,
 			String list) {
 		super();
 		this.location = location;
