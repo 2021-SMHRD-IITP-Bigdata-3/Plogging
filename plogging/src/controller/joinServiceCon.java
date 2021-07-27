@@ -18,21 +18,21 @@ public class joinServiceCon extends HttpServlet {
 		
 			request.setCharacterEncoding("EUC-KR");
 
-			String id = request.getParameter("id");
-			String pw = request.getParameter("pw");
-			String name = request.getParameter("name");
-			String age = request.getParameter("age");
-			String addr = request.getParameter("addr");
-			String plogging = request.getParameter("plogging");
+			String memberId = request.getParameter("id");
+			String memberPw = request.getParameter("pass");
+			String memberName = request.getParameter("name");
+			int memberAge = Integer.parseInt(request.getParameter("age"));
+			String memberAddr = request.getParameter("address");
+			String memberPlogCount = request.getParameter("exp");
 
-			System.out.println("id : "+id);
-			System.out.println("pw : "+pw);
-			System.out.println("name : "+name);
-			System.out.println("age : "+age);
-			System.out.println("addr : "+addr);
-			System.out.println("plogging : "+plogging);
+			System.out.println("id : "+memberId);
+			System.out.println("pass : "+memberPw);
+			System.out.println("name : "+memberName);
+			System.out.println("age : "+memberAge);
+			System.out.println("address : "+memberAddr);
+			System.out.println("exp : "+memberPlogCount);
 
-			memberDTO dto = new memberDTO(id, pw, name, age,addr, plogging);
+			memberDTO dto = new memberDTO(memberId, memberPw, memberName, memberAge,memberAddr, memberPlogCount);
 			memberDAO dao = new memberDAO();
 			int cnt = dao.join(dto);
 //
@@ -40,12 +40,12 @@ public class joinServiceCon extends HttpServlet {
 			String moveURL = "";
 			if(cnt>0) {
 				System.out.println("회원가입성공");
-				moveURL = "";
+				moveURL = "main.jsp";
 				HttpSession session = request.getSession();
-				session.setAttribute("id", id);
+				session.setAttribute("id", memberId);
 			}else {
 				System.out.println("회원가입실패");
-				moveURL = "";
+				moveURL = "main.jsp";
 			}
 
 			response.sendRedirect(moveURL);
