@@ -3,119 +3,111 @@ package Model;
 public class reviewBoardDTO {
 	
 	private int reviewNumber;
-	private String id;
-	private String postDate;
-	private String postPhoto;
+	private String memberId;
+	private String noticeNumber;
+	private String noticePost;
+	private String userBoard;
+	private String reviewDate;
+	private String reviewImage;
 	private String location;
-	private String postContent;
-	private String postTitle;
-	private String checkBox;
+	private String contents;
+	private String reviewTitle;
+	private String check;
 	private int run;
 	
-	
-	public reviewBoardDTO(int reviewNumber, String id, String postDate, String postPhoto, String location,
-			String postContent, String postTitle, String checkBox, int run) {
+	public reviewBoardDTO(int reviewNumber, String memberId, String noticeNumber, String noticePost, String userBoard,
+			String reviewDate, String reviewImage, String location, String contents, String reviewTitle, String check,
+			int run) {
 		super();
 		this.reviewNumber = reviewNumber;
-		this.id = id;
-		this.postDate = postDate;
-		this.postPhoto = postPhoto;
+		this.memberId = memberId;
+		this.noticeNumber = noticeNumber;
+		this.noticePost = noticePost;
+		this.userBoard = userBoard;
+		this.reviewDate = reviewDate;
+		this.reviewImage = reviewImage;
 		this.location = location;
-		this.postContent = postContent;
-		this.postTitle = postTitle;
-		this.checkBox = checkBox;
+		this.contents = contents;
+		this.reviewTitle = reviewTitle;
+		this.check = check;
 		this.run = run;
 	}
-
-
+	
 	public int getReviewNumber() {
 		return reviewNumber;
 	}
-
-
 	public void setReviewNumber(int reviewNumber) {
 		this.reviewNumber = reviewNumber;
 	}
-
-
-	public String getId() {
-		return id;
+	public String getMemberId() {
+		return memberId;
 	}
-
-
-	public void setId(String id) {
-		this.id = id;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
-
-
-	public String getPostDate() {
-		return postDate;
+	public String getNoticeNumber() {
+		return noticeNumber;
 	}
-
-
-	public void setPostDate(String postDate) {
-		this.postDate = postDate;
+	public void setNoticeNumber(String noticeNumber) {
+		this.noticeNumber = noticeNumber;
 	}
-
-
-	public String getPostPhoto() {
-		return postPhoto;
+	public String getNoticePost() {
+		return noticePost;
 	}
-
-
-	public void setPostPhoto(String postPhoto) {
-		this.postPhoto = postPhoto;
+	public void setNoticePost(String noticePost) {
+		this.noticePost = noticePost;
 	}
-
-
+	public String getUserBoard() {
+		return userBoard;
+	}
+	public void setUserBoard(String userBoard) {
+		this.userBoard = userBoard;
+	}
+	public String getReviewDate() {
+		return reviewDate;
+	}
+	public void setReviewDate(String reviewDate) {
+		this.reviewDate = reviewDate;
+	}
+	public String getReviewImage() {
+		return reviewImage;
+	}
+	public void setReviewImage(String reviewImage) {
+		this.reviewImage = reviewImage;
+	}
 	public String getLocation() {
 		return location;
 	}
-
-
 	public void setLocation(String location) {
 		this.location = location;
 	}
-
-
-	public String getPostContent() {
-		return postContent;
+	public String getContents() {
+		return contents;
 	}
-
-
-	public void setPostContent(String postContent) {
-		this.postContent = postContent;
+	public void setContents(String contents) {
+		this.contents = contents;
 	}
-
-
-	public String getPostTitle() {
-		return postTitle;
+	public String getReviewTitle() {
+		return reviewTitle;
 	}
-
-
-	public void setPostTitle(String postTitle) {
-		this.postTitle = postTitle;
+	public void setReviewTitle(String reviewTitle) {
+		this.reviewTitle = reviewTitle;
 	}
-
-
-	public String getCheckBox() {
-		return checkBox;
+	public String getCheck() {
+		return check;
 	}
-
-
-	public void setCheckBox(String checkBox) {
-		this.checkBox = checkBox;
+	public void setCheck(String check) {
+		this.check = check;
 	}
-
-
 	public int getRun() {
 		return run;
 	}
-
-
 	public void setRun(int run) {
 		this.run = run;
 	}
+	
+	
+
 	
 	
 }
