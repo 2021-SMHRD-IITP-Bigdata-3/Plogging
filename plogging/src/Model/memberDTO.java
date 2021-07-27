@@ -35,8 +35,6 @@ public class memberDTO {
 
 
 
-
-
 	public memberDTO(String memberId, String memberPw, String memberName, int memberAge, String memberAddr,
 			String memberPlogCount) {
 		super();
