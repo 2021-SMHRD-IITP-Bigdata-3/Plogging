@@ -5,7 +5,6 @@ public class boardReDTO {
 	private int num;
 	private String commentsNumber;
 	private String boardNum;
-	
 	private String memberID;
 	private String commentsPw;
 	private String commentsContents;
