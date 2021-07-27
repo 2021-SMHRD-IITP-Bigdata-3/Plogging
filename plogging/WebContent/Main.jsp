@@ -34,7 +34,7 @@ reviewBoardDTO info2 = (reviewBoardDTO) session.getAttribute("info2");
 </table>
 
 <br><br><br><br><br>
-
+//
 <table >
 	<tr>맞춤형 공고</tr>
 	<tr>
