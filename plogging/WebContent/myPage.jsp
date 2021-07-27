@@ -70,11 +70,11 @@ div{
 	</div>
 	<table>
 		<tr>
-			<td><input type="button" value="메인" name="main"></td>
-			<td><input type="button" value="조회" name="inquiry"></td>
-			<td><input type="button" value="후기" name="review"></td>
-			<td><input type="button" value="게시판" name="board"></td>
-			<td><input type="button" value="제보" name="report"></td>
+	<td><input type="button" value="메인" name="main" onClick="location.href='Main.jsp'"></td>
+	<td><input type="button" value="조회" name="inquiry" onClick="location.href='inquiryMain.jsp'"></td>
+	<td><input type="button" value="후기" name="review" onClick="location.href='reviewMain.jsp'"></td>
+	<td><input type="button" value="게시판" name="board" onClick="location.href='Board.jsp'"></td>
+	<td><input type="button" value="제보" name="report" onClick="location.href='reportPostWrite.jsp'"></td>
 		</tr>
 		<tr>
 		   <td>메인</td>
