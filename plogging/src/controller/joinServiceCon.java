@@ -12,7 +12,7 @@ import Model.memberDAO;
 import Model.memberDTO;
 
 @WebServlet("/join")
-public class join extends HttpServlet {
+public class joinServiceCon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
