@@ -66,10 +66,10 @@ public class boardDAO {
 		
 			psmt = conn.prepareStatement(sql);
 			
-			psmt.setString(1, dto.getId());
-			psmt.setString(2, dto.getPostContent());
-			psmt.setString(3, dto.getPostTitle());
-			psmt.setString(4, dto.getPostPhoto());
+			psmt.setString(1, dto.getMemberId());
+			psmt.setString(2, dto.getBoardContent());
+			psmt.setString(3, dto.getBoardTitle());
+			psmt.setString(4, dto.getBoardImage());
 			
 			cnt = psmt.executeUpdate();
 			
@@ -80,23 +80,23 @@ public class boardDAO {
 		} return cnt;
 	}
 	
-	public boardDTO showOne(int num) {
+	public boardDTO showOne(int board_num) {
 		try {
 			conn();
-			String sql = "SELECT * FROM board WHERE num = ?";
+			String sql = "SELECT * FROM board WHERE board_num = ?";
 			
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, num);
+			psmt.setInt(1, board_num);
 			rs = psmt.executeQuery();
 			
 			if(rs.next()) {
-				String title = rs.getString(2);
-				String writer = rs.getString(3);
-				String fileName = rs.getString(4);
-				String content = rs.getString(5);
-				String b_date = rs.getString(6);
+				String memberId = rs.getString(2);
+				String boardDate = rs.getString(3);
+				String boardContent = rs.getString(4);
+				String boardTitle = rs.getString(5);
+				String boardImage = rs.getString(6);
 				
-				dto = new boardDTO(num, title, writer, fileName, content, b_date);
+				dto = new boardDTO(board_num, memberId, boardDate, boardContent, boardTitle, boardImage);
 				
 			}
 		} catch (SQLException e) {

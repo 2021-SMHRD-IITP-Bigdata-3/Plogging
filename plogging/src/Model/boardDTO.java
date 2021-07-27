@@ -2,65 +2,67 @@ package Model;
 
 public class boardDTO {
 	
-	private int num;
-	private String id;
-	private String postDate;
-	private String postPhoto;
-	private String postContent;
-	private String postTitle;
+	private int boardNum;
+	private String memberId;
+	private String boardDate;
+	private String boardContent;
+	private String boardTitle;
+	private String boardImage;
 	
 	
-	
-	
-	
-	public boardDTO(int num, String id, String postDate, String postPhoto, String postContent, String postTitle) {
+	public boardDTO(int boardNum, String memberId, String boardDate, String boardContent, String boardTitle,
+			String boardImage) {
 		super();
-		this.num = num;
-		this.id = id;
-		this.postDate = postDate;
-		this.postPhoto = postPhoto;
-		this.postContent = postContent;
-		this.postTitle = postTitle;
+		this.boardNum = boardNum;
+		this.memberId = memberId;
+		this.boardDate = boardDate;
+		this.boardContent = boardContent;
+		this.boardTitle = boardTitle;
+		this.boardImage = boardImage;
 	}
 	
-	public int getNum() {
-		return num;
+	
+	public int getBoardNum() {
+		return boardNum;
 	}
-	public void setNum(int num) {
-		this.num = num;
+	public void setBoardNum(int boardNum) {
+		this.boardNum = boardNum;
 	}
-	public String getId() {
-		return id;
+	public String getMemberId() {
+		return memberId;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
-	public String getPostDate() {
-		return postDate;
+	public String getBoardDate() {
+		return boardDate;
 	}
-	public void setPostDate(String postDate) {
-		this.postDate = postDate;
+	public void setBoardDate(String boardDate) {
+		this.boardDate = boardDate;
 	}
-	public String getPostPhoto() {
-		return postPhoto;
+	public String getBoardContent() {
+		return boardContent;
 	}
-	public void setPostPhoto(String postPhoto) {
-		this.postPhoto = postPhoto;
+	public void setBoardContent(String boardContent) {
+		this.boardContent = boardContent;
 	}
-	public String getPostContent() {
-		return postContent;
+	public String getBoardTitle() {
+		return boardTitle;
 	}
-	public void setPostContent(String postContent) {
-		this.postContent = postContent;
+	public void setBoardTitle(String boardTitle) {
+		this.boardTitle = boardTitle;
 	}
-	public String getPostTitle() {
-		return postTitle;
+	public String getBoardImage() {
+		return boardImage;
 	}
-	public void setPostTitle(String postTitle) {
-		this.postTitle = postTitle;
+	public void setBoardImage(String boardImage) {
+		this.boardImage = boardImage;
 	}
+	
+	
+	
+	
 
-	
 	
 	
 	
