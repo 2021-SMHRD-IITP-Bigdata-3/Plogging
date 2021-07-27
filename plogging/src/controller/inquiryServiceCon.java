@@ -33,8 +33,8 @@ public class inquiryServiceCon extends HttpServlet {
 		System.out.println("postNumber : "+postNumber);
 		System.out.println("list : "+list);
 		
-		notic_BoardDTO dto = new notic_BoardDTO(location, ploggingDate, postPhoto, peopleLimit,postNumber, list);
-		notic_BoardDAO dao = new notic_BoardDAO();
+//		notic_BoardDTO dto = new notic_BoardDTO(location, ploggingDate, postPhoto, peopleLimit,postNumber, list);
+//		notic_BoardDAO dao = new notic_BoardDAO();
 		//
 		response.sendRedirect("inquiryMain.jsp");
 	}
