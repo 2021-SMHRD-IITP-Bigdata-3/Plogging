@@ -2,54 +2,69 @@ package Model;
 
 public class boardReDTO {
 	
-	//댓글번호, 댓글아이디, 댓글 비밀번호, 댓글 내용, 댓글 작성일자, 게시물 번호
-	private int renum;
-	private String reid;
-	private String repw;
-	private String reDate;
-	private int postNum;
-	public int getRenum() {
-		return renum;
+	private int num;
+	private String commentsNumber;
+	private String boardNum;
+	
+	private String memberID;
+	private String commentsPw;
+	private String commentsContents;
+	private String commentsDate;
+	public int getNum() {
+		return num;
 	}
-	public void setRenum(int renum) {
-		this.renum = renum;
+	public void setNum(int num) {
+		this.num = num;
 	}
-	public String getReid() {
-		return reid;
+	public String getCommentsNumber() {
+		return commentsNumber;
 	}
-	public void setReid(String reid) {
-		this.reid = reid;
+	public void setCommentsNumber(String commentsNumber) {
+		this.commentsNumber = commentsNumber;
 	}
-	public String getRepw() {
-		return repw;
+	public String getBoardNum() {
+		return boardNum;
 	}
-	public void setRepw(String repw) {
-		this.repw = repw;
+	public void setBoardNum(String boardNum) {
+		this.boardNum = boardNum;
 	}
-	public String getReDate() {
-		return reDate;
+	public String getMemberID() {
+		return memberID;
 	}
-	public void setReDate(String reDate) {
-		this.reDate = reDate;
+	public void setMemberID(String memberID) {
+		this.memberID = memberID;
 	}
-	public int getPostNum() {
-		return postNum;
+	public String getCommentsPw() {
+		return commentsPw;
 	}
-	public void setPostNum(int postNum) {
-		this.postNum = postNum;
+	public void setCommentsPw(String commentsPw) {
+		this.commentsPw = commentsPw;
 	}
-	public boardReDTO(int renum, String reid, String repw, String reDate, int postNum) {
+	public String getCommentsContents() {
+		return commentsContents;
+	}
+	public void setCommentsContents(String commentsContents) {
+		this.commentsContents = commentsContents;
+	}
+	public String getCommentsDate() {
+		return commentsDate;
+	}
+	public void setCommentsDate(String commentsDate) {
+		this.commentsDate = commentsDate;
+	}
+	public boardReDTO(int num, String commentsNumber, String boardNum, String memberID, String commentsPw,
+			String commentsContents, String commentsDate) {
 		super();
-		this.renum = renum;
-		this.reid = reid;
-		this.repw = repw;
-		this.reDate = reDate;
-		this.postNum = postNum;
+		this.num = num;
+		this.commentsNumber = commentsNumber;
+		this.boardNum = boardNum;
+		this.memberID = memberID;
+		this.commentsPw = commentsPw;
+		this.commentsContents = commentsContents;
+		this.commentsDate = commentsDate;
 	}
 	
 	
 	
-	
-	
-	
+
 }
