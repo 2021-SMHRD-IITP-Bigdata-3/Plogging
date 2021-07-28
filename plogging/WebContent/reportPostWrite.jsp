@@ -39,7 +39,7 @@
 					¾÷·Îµå <input type = "file">
 				</td>
 				<td>
-					<a href = "inputAddress.jsp" target = "_blank"><img src = "Map.png" width="50" height="50"></a>
+					<a  href = "inputAddress.jsp" target = "_blank"><img src = "Map.png" width="50" height="50"></a>
 				</td>
 			</tr>
 			<tr>

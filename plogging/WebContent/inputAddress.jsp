@@ -14,7 +14,7 @@ function javascript(){
 </head>
 <body>
 <p style="margin-top:-12px">
-    <b>Chrome 브라우저는 https 환경에서만 geolocation을 지원합니다.</b> 참고해주세요.
+    <b></b> 참고해주세요.
 </p>
 <form action = " ">
 	<div id="map" style="width:350px;height:350px;"></div>
