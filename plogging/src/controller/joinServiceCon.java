@@ -18,13 +18,15 @@ public class joinServiceCon extends HttpServlet {
 		
 			request.setCharacterEncoding("EUC-KR");
 
+
 			String memberId = request.getParameter("id");
 			String memberPw = request.getParameter("pass");
 			String memberName = request.getParameter("name");
 			int memberAge = Integer.parseInt(request.getParameter("age"));
-			String memberAddr = request.getParameter("address");
+			String memberAddr = request.getParameter("latlng");
 			String memberPlogCount = request.getParameter("exp");
-
+					
+			
 			System.out.println("id : "+memberId);
 			System.out.println("pass : "+memberPw);
 			System.out.println("name : "+memberName);
@@ -32,10 +34,11 @@ public class joinServiceCon extends HttpServlet {
 			System.out.println("address : "+memberAddr);
 			System.out.println("exp : "+memberPlogCount);
 
-			memberDTO dto = new memberDTO(memberId, memberPw, memberName, memberAge,memberAddr, memberPlogCount);
+			memberDTO dto = new memberDTO(memberId, memberPw, memberName, memberAge, memberAddr, memberPlogCount);
 			memberDAO dao = new memberDAO();
 			int cnt = dao.join(dto);
-//
+			System.out.println(cnt);
+
 
 			String moveURL = "";
 			if(cnt>0) {
