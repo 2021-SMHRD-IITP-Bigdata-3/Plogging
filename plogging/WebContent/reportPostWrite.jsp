@@ -19,6 +19,8 @@
 </style>
 </head>
 <body>
+					
+
 <div>
 	<table>
 	<tr>
@@ -39,7 +41,20 @@
 					¾÷·Îµå <input type = "file">
 				</td>
 				<td>
-					<a  href = "inputAddress.jsp" target = "_blank"><img src = "Map.png" width="50" height="50"></a>
+					<a href = "inputAddress.jsp" target = "_blank"><img src = "Map.png" width="50" height="50"></a>
+<%
+	request.setCharacterEncoding("EUC-KR");
+					
+	String lat =request.getParameter("lat");
+	String lng =request.getParameter("lng");
+						
+	System.out.println(lat);
+	System.out.println(lng);
+%>
+
+										
+					<input type="hidden" name="lat" id="lat">
+					<input type="hidden" name="lng" id="lng">
 				</td>
 			</tr>
 			<tr>
@@ -71,6 +86,9 @@
 		</table>
 	</form>
 </div>
-
+<script>
+document.getElementById('lat').value = <%=lat%>;
+document.getElementById('lng').value = <%=lng%>;
+</script>
 </body>
 </html>

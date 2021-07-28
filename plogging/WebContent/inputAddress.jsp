@@ -16,11 +16,11 @@ function javascript(){
 <p style="margin-top:-12px">
     <b>Chrome 브라우저는 https 환경에서만 geolocation을 지원합니다.</b> 참고해주세요.
 </p>
-<form action = " ">
+<form action = "reportPostWrite.jsp" method = "post">
 	<div id="map" style="width:350px;height:350px;"></div>
 	<input type="hidden" name="lat" id="lat">
 	<input type="hidden" name="lng" id="lng">
-	<div><input type = "submit" value = "제출" onclick =javascript()></div>
+	<div><input type = "submit" value = "제출"></div>
 </form>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=72d306962d4f7f31bb4597d71782852b&libraries=services"></script>
 <script><!-- ㄴㅇㅁㄴㅇ-->
@@ -95,9 +95,9 @@ function displayMarker(locPosition, message) {
     
     // 마커 위치를 클릭한 위치로 옮깁니다
     marker.setPosition(latlng);
-    document.getElementById('lat').value = latlng.getLat()
-    document.getElementById('lng').value = latlng.getLng()
-});
+    document.getElementById('lat').value = latlng.getLat();
+    document.getElementById('lng').value = latlng.getLng();
+    });
 
 </script>
 </body>
