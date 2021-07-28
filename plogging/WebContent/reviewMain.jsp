@@ -16,20 +16,20 @@ align : center;
 <table>
 <tr>
    <td>싸이트명</td>
-   <td style = "float : right"><input type ="button" value = "내정보 검색"></td>
+   <td style = "float : right"><input type ="button" value = "내정보 검색" onClick="location.href='myPage.jsp'"></td>
    <td style = "float : right"><input type ="button" value = "검색"></td>
 </tr>
 </table>
 <div id="map" style="width:340px;height:340px;" align ='center'></div>
-	<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=72d306962d4f7f31bb4597d71782852b"></script>
+	<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=3bced30872f8da5c8764563d13d480e7"></script>
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = {
-		        center: new kakao.maps.LatLng(35.149836, 126.919865), // 지도의 중심좌표
+		        center: new kakao.maps.LatLng(35.1469568,126.9202944), // 지도의 중심좌표
 		        level: 4, // 지도의 확대 레벨
 		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
 		    }; 
-
+////
 		// 지도를 생성한다 
 		var map = new kakao.maps.Map(mapContainer, mapOption); 
 
@@ -39,12 +39,11 @@ align : center;
 		    map: map // 마커를 표시할 지도 객체
 		});
 	</script>
-</div>
    <div>
    <table border='1px' style='height:100px;'>
    <tr>
-     <td> 자유 게시판</td>
-     <td><input type="button" value="글쓰기" style='float: right;'></tr>
+     <td>후기게시판</td>
+     <td><input type="button" value="글쓰기" style='float: right;' onClick="location.href='reviewWrite7.jsp'"></tr>
       </table>
       <table border='1px' style='height:100px;'>
          <tr>
@@ -109,11 +108,11 @@ align : center;
 </table>
    <table>
 <tr>
-   <td><input type="button" value="메인"></td>
-   <td><input type="button" value="조회"></td>
-   <td><input type="button" value="후기"></td>
-   <td><input type="button" value="게시판"></td>
-   <td><input type="button" value="제보"></td>
+	<td><input type="button" value="메인" name="main" onClick="location.href='Main.jsp'"></td>
+	<td><input type="button" value="조회" name="inquiry" onClick="location.href='inquiryMain.jsp'"></td>
+	<td><input type="button" value="후기" name="review" onClick="location.href='reviewMain.jsp'"></td>
+	<td><input type="button" value="게시판" name="board" onClick="location.href='Board.jsp'"></td>
+	<td><input type="button" value="제보" name="report" onClick="location.href='reportPostWrite.jsp'"></td>
 </tr>
 <tr>
    <td>메인</td>
