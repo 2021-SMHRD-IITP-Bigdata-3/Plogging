@@ -16,7 +16,7 @@ function javascript(){
 <p style="margin-top:-12px">
     <b>Chrome 브라우저는 https 환경에서만 geolocation을 지원합니다.</b> 참고해주세요.
 </p>
-<form action = " ">
+<form action = " "><!-- 123 -->
 	<div id="map" style="width:350px;height:350px;"></div>
 	<input type="hidden" name="lat" id="lat">
 	<input type="hidden" name="lng" id="lng">

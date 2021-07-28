@@ -26,7 +26,7 @@
 	   <td style = "float : right"><input type ="button" value = "내정보 검색" onClick="location.href='myPage.jsp'"></td>
 	   <td style = "float : right"><input type ="button" value = "검색"></td>
 	</tr>
-	</table>
+	</table><!-- 123 -->
 	<form action = "" method = "post">
 		<table border = "1px" >
 			<tr>
