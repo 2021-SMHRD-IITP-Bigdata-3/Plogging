@@ -18,14 +18,7 @@ public class reportPostServiceCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("EUC-KR");
-		
-		
-		//// 수정수정수정수정 이 주석은 보면 지워
-		////////////////////
-		
-		
-		
-		
+	
 		// 1. 이미지 경로
 		// getServletContext : 서블릿의 정보
 		// getRealPath : 실제 경로
@@ -45,10 +38,10 @@ public class reportPostServiceCon extends HttpServlet {
 		// request 객체 이미지 저장 경로, 제한할 이미지 크기, 인코딩방식, 중복제거
 		MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy());
 		
-		String title = request.getParameter("title");
-		String lat = request.getParameter("lat");
-		String lng = request.getParameter("lng");
-		String content = request.getParameter("content");
+		String title = multi.getParameter("title");
+		String lat = multi.getParameter("lat");
+		String lng = multi.getParameter("lng");
+		String content = multi.getParameter("content");
 		
 		// 이미지 태그에 경로 작성 시 16진수로 적어줘야 해서 인코딩 진행
 		// 그냥 인코딩 하면 파일이 없을 때 오류가 나니까 if문으로
@@ -56,10 +49,10 @@ public class reportPostServiceCon extends HttpServlet {
 		if (multi.getFilesystemName("fileName") != null) {			
 			fileName = URLEncoder.encode(multi.getFilesystemName("fileName"), "EUC-KR");
 		}
-		System.out.println(title);
-		System.out.println(lat);
-		System.out.println(lng);
-		System.out.println(content);
+		System.out.println("title: " + title);
+		System.out.println("lat:" + lat);
+		System.out.println("lng:" + lng);
+		System.out.println("content:" + content);
 		System.out.println(fileName);
 		
 //		// 제보테이블, 제보dto, 제보dao(업로드하는 메소드 만들기)
