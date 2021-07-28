@@ -13,6 +13,9 @@
 	   width: 360px;
 	   height: 300px;
     }	
+    tr td a{
+    	width:
+    }
 </style>
 </head>
 <body>
@@ -20,7 +23,7 @@
 	<table>
 	<tr>
 	   <td>싸이트명</td>
-	   <td style = "float : right"><input type ="button" value = "내정보 검색"></td>
+	   <td style = "float : right"><input type ="button" value = "내정보 검색" onClick="location.href='myPage.jsp'"></td>
 	   <td style = "float : right"><input type ="button" value = "검색"></td>
 	</tr>
 	</table>
@@ -36,7 +39,7 @@
 					업로드 <input type = "file">
 				</td>
 				<td>
-					 위치 정보 <!-- 위치정보넣는태그검색해서 추가 --></td>
+					<a href = "inputAddress.jsp" target = "_blank"><img src = "Map.png" width="50" height="50"></a>
 				</td>
 			</tr>
 			<tr>
@@ -52,11 +55,11 @@
 		</table>
 		<table>
 		<tr>
-		   <td><input type="button" value="메인"></td>
-		   <td><input type="button" value="조회"></td>
-		   <td><input type="button" value="후기"></td>
-		   <td><input type="button" value="게시판"></td>
-		   <td><input type="button" value="제보"></td>
+	<td><input type="button" value="메인" name="main" onClick="location.href='Main.jsp'"></td>
+	<td><input type="button" value="조회" name="inquiry" onClick="location.href='inquiryMain.jsp'"></td>
+	<td><input type="button" value="후기" name="review" onClick="location.href='reviewMain.jsp'"></td>
+	<td><input type="button" value="게시판" name="board" onClick="location.href='Board.jsp'"></td>
+	<td><input type="button" value="제보" name="report" onClick="location.href='reportPostWrite.jsp'"></td>
 		</tr>
 		<tr>
 		   <td>메인</td>
