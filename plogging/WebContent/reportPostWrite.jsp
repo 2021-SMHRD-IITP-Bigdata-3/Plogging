@@ -22,7 +22,7 @@
 <div>
 	<table>
 	<tr>
-	   <td>싸이트명</td>
+	   <td>싸이트명</td><!--  참고해주세요.-->
 	   <td style = "float : right"><input type ="button" value = "내정보 검색" onClick="location.href='myPage.jsp'"></td>
 	   <td style = "float : right"><input type ="button" value = "검색"></td>
 	</tr>

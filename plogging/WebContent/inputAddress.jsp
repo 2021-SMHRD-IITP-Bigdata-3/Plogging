@@ -14,7 +14,7 @@ function javascript(){
 </head>
 <body>
 <p style="margin-top:-12px">
-    <b></b> 참고해주세요.
+    <b></b> <!--  참고해주세요.-->
 </p>
 <form action = " ">
 	<div id="map" style="width:350px;height:350px;"></div>
