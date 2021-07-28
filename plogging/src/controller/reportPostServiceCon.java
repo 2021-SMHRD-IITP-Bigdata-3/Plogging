@@ -18,7 +18,13 @@ public class reportPostServiceCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("EUC-KR");
-				
+		
+		
+		//// 수정수정수정수정 이 주석은 보면 지워
+		
+		
+		
+		
 		// 1. 이미지 경로
 		// getServletContext : 서블릿의 정보
 		// getRealPath : 실제 경로
