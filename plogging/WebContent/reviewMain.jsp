@@ -39,7 +39,7 @@ align : center;
 		    map: map // 마커를 표시할 지도 객체
 		});
 	</script>
-   <div>
+   <div><!-- 123 -->
    <table border='1px' style='height:100px;'>
    <tr>
      <td>후기게시판</td>

@@ -9,17 +9,13 @@
 	table {
 		width : 360px;
 	}
-   textarea {
-	   width: 360px;
-	   height: 300px;
-    }	
 </style>
 </head>
 <body>
 <div>
 	<table>
 	<tr>
-	   <td>싸이트명</td>
+	   <td>싸이트명ㅇㅇ</td>
 	   <td style = "float : right"><input type ="button" value = "내정보 검색" onClick="location.href='myPage.jsp'"></td>
 	   <td style = "float : right"><input type ="button" value = "검색"></td>
 	</tr>
@@ -28,22 +24,40 @@
 		<table border = "1px" >
 			<tr>
 				<td colspan = "4">
-					<input type = "text" placeholder = "제목을 입력하세요." name ="title" >
+					게시글 제목
 				</td>
 			</tr>
 			<tr>
-				<td colspan = "3">
-					업로드 <input type = "file">
-				</td>
-				<td>
-					 위치 정보 <!-- 위치정보넣는태그검색해서 추가 --></td>
-				</td>
+				<td colspan = "2"> 날짜 및 시간 </td>
+				<td> 조회수 </td>
+				<td> 닉네임 </td>
 			</tr>
-			<tr>
-				<td colspan = "4">
-					<textarea></textarea>	
-				</td>
-			</tr>
+			<tr> <td colspan = "4" height = "300">게시 내용 </td></tr>
+				<td colspan = "2"></td>
+				<td> <input type = "submit" value = "수정"> </td>
+				<td> <input type = "submit" value = "삭제"> </td>
+			</tr>			
+		</table>
+		<table  border = "1px">
+		<tr>
+		   <td colspan = "4"> 댓글 </td>
+		</tr>
+		<tr>
+		   <td colspan = "4"> 닉네임 </td>
+		</tr>		
+		<tr>
+		   <td colspan = "4"> 댓글내용 </td>
+		</tr>
+		<tr>
+		   <td colspan = "4"> 댓글시간 </td>
+		</tr>
+		<tr>
+		   <td colspan = "4"><input type="text"  placeholder = "댓글 쓰기"></td>
+		</tr>
+		<tr>
+		   <td colspan = "2"> prev</td>
+		   <td colspan = "2"> next</td>
+		</tr>
 		</table>
 		<table>
 		<tr>
@@ -52,13 +66,6 @@
 	<td><input type="button" value="후기" name="review" onClick="location.href='reviewMain.jsp'"></td>
 	<td><input type="button" value="게시판" name="board" onClick="location.href='Board.jsp'"></td>
 	<td><input type="button" value="제보" name="report" onClick="location.href='reportPostWrite.jsp'"></td>
-		</tr>
-		<tr>
-		   <td>메인</td>
-		   <td>조회</td>
-		   <td>후기</td>
-		   <td>게시판</td>
-		   <td>제보</td>
 		</tr>
 		</table>
 	</form>
