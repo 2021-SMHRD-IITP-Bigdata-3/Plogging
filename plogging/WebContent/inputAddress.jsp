@@ -95,8 +95,8 @@ function displayMarker(locPosition, message) {
     
     // 마커 위치를 클릭한 위치로 옮깁니다
     marker.setPosition(latlng);
-    document.getElementById('lat').value = latlng.getLat()
-    document.getElementById('lng').value = latlng.getLng()
+    document.getElementById('lat').value = latlng.getLat();
+    document.getElementById('lng').value = latlng.getLng();
 });
 
 </script>

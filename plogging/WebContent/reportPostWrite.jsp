@@ -19,6 +19,15 @@
 </style>
 </head>
 <body>
+
+	<%
+		request.setCharacterEncoding("EUC-KR");
+
+		String lat = request.getParameter("lat");
+		String lng = request.getParameter("lng");
+		
+	%>
+	
 <div>
 	<table>
 	<tr>
@@ -27,7 +36,7 @@
 	   <td style = "float : right"><input type ="button" value = "검색"></td>
 	</tr>
 	</table>
-	<form action = "" method = "post">
+	<form action = "reportPostServiceCon" method = "post">
 		<table border = "1px" >
 			<tr>
 				<td colspan = "4">
@@ -36,15 +45,21 @@
 			</tr>
 			<tr>
 				<td colspan = "3">
-					업로드 <input type = "file">
+					업로드 <input type = "file" name = "fileName">
 				</td>
 				<td>
-					<a  href = "inputAddress.jsp" target = "_blank"><img src = "Map.png" width="50" height="50"></a>
+					<a  href = "inputAddress.jsp" target = "_blank"><img src = "Map.png" width="50" height="50"></a>	
+					<input type="text" id ="lat" name ="lat" >
+					<input type="text" id ="lng" name ="lng" >
+				<script>
+	                document.getElementById("lat").value = lat;
+	                document.getElementById("lng").value = lng;
+				</script>					
 				</td>
 			</tr>
 			<tr>
 				<td colspan = "4">
-					<textarea></textarea>	
+					<textarea name = "content"></textarea>	
 				</td>
 			</tr>
 		</table>
