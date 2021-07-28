@@ -28,7 +28,7 @@
 	   <td style = "float : right"><input type ="button" value = "°Ë»ö"></td>
 	</tr>
 	</table>
-	<form action = "reportPostServiceCon" method = "post">
+	<form action = "reportPostServiceCon" method = "post" >
 		<table border = "1px" >
 			<tr>
 				<td colspan = "4">
