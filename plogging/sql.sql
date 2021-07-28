@@ -1,22 +1,28 @@
 게시판 board
 create table board(
-	board_num varchar2(100), -- 게시물 번호
-	member_id varchar2(100), -- 아이디
-	board_date date,    -- 작성일자
-	board_content varchar2(1000), -- 게시글 내용
-	board_title varchar2(100), -- 게시글 제목
-	board_image varchar2(100), -- 게시글 사진
-	constraint board_pk primary key (board_num),
-	constraint member_id_fk foreign key(member_id) references member(member_id)
+   board_num varchar2(100), -- 게시물 번호
+   member_id varchar2(100), -- 아이디
+   board_date date,    -- 작성일자
+   board_content varchar2(1000), -- 게시글 내용
+   board_title varchar2(100), -- 게시글 제목
+   board_image varchar2(100), -- 게시글 사진
+   constraint board_pk primary key (board_num),
+   constraint member_id_fk foreign key(member_id) references member(member_id)
 );
+--
+insert into board (board_num,member_id,board_date,board_content,board_title,board_image) values(num_board1.nextval,'test',sysdate,'test','test','test');
+select * from board;
 
-insert into board (board_num,member_id,board_date,board_content,board_title,board_image) values('test','test','sysdate','test','test','test');
-
+<<<<<<< HEAD
+drop table board;
+=======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-3/Plogging.git
 
 시퀀스 num_board
-create sequence num_board
-start with 1 -- 시작숫자
-increment by 1; -- 증감숫자
+create sequence num_board1
+increment by 1
+start with 1
+maxvalue 9999;
 minvalue -- 최소값
 maxvalue -- 최대값
 nocycle -- 반복지정
@@ -117,7 +123,7 @@ create table notice(
 	limited_number varchar2(100), -- 제한 인원수
 	address varchar2(100), -- 지역 주소값
 	plog_date varchar2(100), -- 플로깅 날짜
-	constraint notice_pk primary key (notice_number, user_board)
+	constraint notice_pk primary key (notice_number, user_board),
 	constraint notice_post_fk foreign key(notice_post) references local_governments(notice_post)
 );
 

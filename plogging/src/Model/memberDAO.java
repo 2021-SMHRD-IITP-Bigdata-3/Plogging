@@ -57,7 +57,7 @@ public class memberDAO {
 			// DB 연결 메소드 호출
 			conn();
 
-			String sql = "insert into member values(?,?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into member(member_id,member_pw,member_name,member_age,member_addr,member_plog_own) values(?,?,?,?,?,?)";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -65,12 +65,8 @@ public class memberDAO {
 			psmt.setString(2, dto.getMemberPw());
 			psmt.setString(3, dto.getMemberName());
 			psmt.setInt(4, dto.getMemberAge());
-			psmt.setString(5, dto.getMemberPoint());
-			psmt.setString(6, dto.getMemberAddr());
-			psmt.setString(7, dto.getMemberPlogOwn());
-			psmt.setInt(8, dto.getPoint());
-			psmt.setString(9, dto.getUserBoard());
-			psmt.setString(10, dto.getMemberPlogCount());
+			psmt.setString(5, dto.getMemberAddr());
+			psmt.setString(6, dto.getMemberPlogOwn());
 
 			cnt = psmt.executeUpdate();
 
