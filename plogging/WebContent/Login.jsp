@@ -29,18 +29,19 @@
 </tr>
 </table>
 <br><br><br><br><br>
+<form action="loginServiceCon" method = "post">
 <table>
 <tr>
 	<td>
 		<div align ="center">
-			<textarea placeholder="아이디 입력" style = 'float:center'></textarea><br>
+			<textarea placeholder="아이디 입력" name="id" style = 'float:center'></textarea><br>
 		</div>
 	</td>
 </tr>
 <tr>
 	<td>
 		<div align ="center">
-			<textarea placeholder="비밀번호 입력"></textarea>
+			<textarea placeholder="비밀번호 입력" name="pw"></textarea>
 		</div>
 	</td>
 
@@ -48,6 +49,7 @@
 </table>
 <div align = "center"><input type = "submit" value = "로그인"></div>
 <div align="right"><input type = "button" value = "아이디찾기 / 비밀번호 착기"></div>
+</form>
 <br><br><br><br>
 <table>
 <tr>

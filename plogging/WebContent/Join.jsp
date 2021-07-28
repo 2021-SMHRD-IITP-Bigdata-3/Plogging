@@ -24,6 +24,7 @@
 
 
 				<div>
+				<form action="joinServiceCon" method = "post">
 					<table align="center">
 						<tr>
 							<td>
@@ -38,6 +39,7 @@
 					</table>
 				</div>
 				<div>
+				
 					<table align="center">
 					<tr>
 					<td>
@@ -116,12 +118,14 @@
 						</td>
 					</tr>
 					</table>
+					
 				</div>
 
 				<div class="btn_area" align="center">
 					<p>
 						<input type="submit" value="가입하기">
 				</div>
+				</form>
 		
 
 	<div>

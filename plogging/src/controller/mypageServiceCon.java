@@ -17,21 +17,29 @@ public class mypageServiceCon extends HttpServlet {
 		
 		request.setCharacterEncoding("EUC-KR");
 
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		String name = request.getParameter("name");
-		String age = request.getParameter("age");
-		String addr = request.getParameter("addr");
-		String plogging = request.getParameter("plogging");
+		String memberId = request.getParameter("id");
+		String memberPw = request.getParameter("pw");
+		String memberName = request.getParameter("name");
+		int memberAge = Integer.parseInt(request.getParameter("memberAge"));
+		String memberPoint = request.getParameter("memberPoint");
+		String memberAddr = request.getParameter("memberAddr");
+		String memberPlogOwn = request.getParameter("memberPlogOwn");
+		int point = Integer.parseInt(request.getParameter("point"));
+		String userBoard = request.getParameter("userBoard");
+		String memberPlogCount = request.getParameter("memberPlogCount");
 
-		System.out.println("id : "+id);
-		System.out.println("pw : "+pw);
-		System.out.println("name : "+name);
-		System.out.println("age : "+age);
-		System.out.println("addr : "+addr);
-		System.out.println("plogging : "+plogging);
+		System.out.println("id : "+memberId);
+		System.out.println("pw : "+memberPw);
+		System.out.println("name : "+memberName);
+		System.out.println("age : "+memberAge);
+		System.out.println("memberPoint : "+memberPoint);
+		System.out.println("addr : "+memberAddr);
+		System.out.println("plogown : "+memberPlogOwn);
+		System.out.println("point : "+point);
+		System.out.println("userBoard : "+userBoard);
+		System.out.println("memberPlogCount : "+memberPlogCount);
 //
-		memberDTO dto = new memberDTO(id, pw, name, age,addr, plogging);
+		memberDTO dto = new memberDTO(memberId, memberPw,memberName, memberAge,memberPoint, memberAddr,memberPlogOwn,point,userBoard,memberPlogCount);
 		memberDAO dao = new memberDAO();
 		
 		response.sendRedirect("myPage.jsp");

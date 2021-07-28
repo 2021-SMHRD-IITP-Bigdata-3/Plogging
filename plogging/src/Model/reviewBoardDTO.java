@@ -12,12 +12,12 @@ public class reviewBoardDTO {
 	private String location;
 	private String contents;
 	private String reviewTitle;
-	private String check;
+	private String checkBox;
 	private int run;
 	
 	
 	public reviewBoardDTO(int reviewNumber, String memberId, String noticeNumber, String noticePost, String userBoard,
-			String reviewDate, String reviewImage, String location, String contents, String reviewTitle, String check,
+			String reviewDate, String reviewImage, String location, String contents, String reviewTitle, String checkBox,
 			int run) {
 		super();
 		this.reviewNumber = reviewNumber;
@@ -30,7 +30,7 @@ public class reviewBoardDTO {
 		this.location = location;
 		this.contents = contents;
 		this.reviewTitle = reviewTitle;
-		this.check = check;
+		this.checkBox = checkBox;
 		this.run = run;
 	}
 	
@@ -94,11 +94,11 @@ public class reviewBoardDTO {
 	public void setReviewTitle(String reviewTitle) {
 		this.reviewTitle = reviewTitle;
 	}
-	public String getCheck() {
-		return check;
+	public String getCheckBox() {
+		return checkBox;
 	}
-	public void setCheck(String check) {
-		this.check = check;
+	public void getCheckBox(String checkBox) {
+		this.checkBox = checkBox;
 	}
 	public int getRun() {
 		return run;
