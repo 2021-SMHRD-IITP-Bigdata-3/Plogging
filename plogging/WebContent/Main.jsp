@@ -41,6 +41,7 @@ reviewBoardDTO info2 = (reviewBoardDTO) session.getAttribute("info2");
 <br><br><br><br><br>
 //
 <table >
+<<<<<<< HEAD
    <tr>맞춤형 공고</tr>
    <tr>
       <td>플로깅 기한 :<%if(dto.getBoardDate() !=null){ %><span><%=dto.getBoardDate() %> </span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
@@ -81,6 +82,53 @@ reviewBoardDTO info2 = (reviewBoardDTO) session.getAttribute("info2");
       <td><input type = "button" value = "신청"></td>
       <!-- 인원수 -->
    </tr>
+=======
+	<tr>맞춤형 공고</tr>
+	<tr>
+		<td>플로깅 기한 :<%if(info !=null){ %><span><%=info.getBoardDate() %> </span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
+		<!-- 기한!~!! -->
+		<td><div>사진<%if(info1 !=null){ %><span><%=info1.getNoticeImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
+	</tr>
+	<tr >
+		<td>제한 인원수<%if(info1 !=null){ %><span><%=info1.getNoticeMember() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
+		<!-- 인원수 -->
+	</tr>
+	<tr>
+		<td><input type = "button" value = "신청"></td>
+		<!-- 인원수 -->
+	</tr>
+		<tr>
+		<td>플로깅 기한 :<%if(info !=null){ %><span><%=info.getBoardDate() %></span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
+		<!-- 기한!~!! -->
+		<td><div>사진<%if(info1 !=null){ %><span><%=info1.getNoticeImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
+	</tr>
+	<tr >
+		<td>제한 인원수<%if(info1 !=null){ %><span><%=info1.getNoticeMember() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
+		<!-- 인원수 -->
+	</tr>
+	<tr>
+		<td><input type = "button" value = "신청"></td>
+		<!-- 인원수 -->
+	</tr>
+<<<<<<< HEAD
+	<tr>
+		<td>플로깅 기한 :</td>
+=======
+		<tr>
+		<td>플로깅 기한 :<%if(info !=null){ %><span><%=info.getBoardDate() %></span></span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-3/Plogging.git
+		<!-- 기한!~!! -->
+		<td><div>사진<%if(info1 !=null){ %><span><%=info1.getNoticeImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
+	</tr>
+	<tr >
+		<td>제한 인원수<%if(info1 !=null){ %><span><%=info1.getNoticeMember() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
+		<!-- 인원수 -->
+	</tr>
+	<tr>
+		<td><input type = "button" value = "신청"></td>
+		<!-- 인원수 -->
+	</tr>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-3/Plogging.git
 </table>
 <table>
 <tr>

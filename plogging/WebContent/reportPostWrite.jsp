@@ -13,13 +13,16 @@
 	   width: 360px;
 	   height: 300px;
     }	
+    tr td a{
+    	width:
+    }
 </style>
 </head>
 <body>
 <div>
 	<table>
 	<tr>
-	   <td>싸이트명</td>
+	   <td>싸이트명</td><!-- ㄴㅇㅁㄴㅇ-->
 	   <td style = "float : right"><input type ="button" value = "내정보 검색" onClick="location.href='myPage.jsp'"></td>
 	   <td style = "float : right"><input type ="button" value = "검색"></td>
 	</tr>
@@ -36,7 +39,7 @@
 					업로드 <input type = "file">
 				</td>
 				<td>
-					 위치 정보 <!-- 위치정보넣는태그검색해서 추가 --></td>
+					<a  href = "inputAddress.jsp" target = "_blank"><img src = "Map.png" width="50" height="50"></a>
 				</td>
 			</tr>
 			<tr>
