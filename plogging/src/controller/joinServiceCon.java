@@ -40,14 +40,14 @@ public class joinServiceCon extends HttpServlet {
 			String moveURL = "";
 			if(cnt>0) {
 				System.out.println("회원가입성공");
-				moveURL = "main.jsp";
+				moveURL = "Main.jsp";
 				HttpSession session = request.getSession();
 				session.setAttribute("id", memberId);
 			}else {
 				System.out.println("회원가입실패");
-				moveURL = "main.jsp";
+				moveURL = "Main.jsp";
 			}
 
-			response.sendRedirect(moveURL);
+			response.sendRedirect("Main.jsp");
 		}
 	}

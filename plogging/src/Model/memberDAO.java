@@ -50,6 +50,8 @@ public class memberDAO {
 		}
 	}
 
+	
+	// 회원가입 메소드
 	public int join(memberDTO dto) {
 		try {
 			// DB 연결 메소드 호출

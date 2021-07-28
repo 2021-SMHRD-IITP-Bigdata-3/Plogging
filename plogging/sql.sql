@@ -6,12 +6,11 @@ create table board(
 	board_content varchar2(1000), -- 게시글 내용
 	board_title varchar2(100), -- 게시글 제목
 	board_image varchar2(100), -- 게시글 사진
-	constraint board_pk primary key (board_num)
+	constraint board_pk primary key (board_num),
 	constraint member_id_fk foreign key(member_id) references member(member_id)
 );
 
 insert into board (board_num,member_id,board_date,board_content,board_title,board_image) values('test','test','sysdate','test','test','test');
-
 
 
 시퀀스 num_board
