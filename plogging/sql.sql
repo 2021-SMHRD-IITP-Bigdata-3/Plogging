@@ -62,7 +62,7 @@ create table member(
 
 insert into member(member_id,member_pw,member_name,member_age,member_point,member_addr,member_plog_own,point,user_board,member_plog_count) values('test','test','test',1,'test','test','o',1,'test',1);
 
-
+select * from member
 
 후기게시판 review_board
 create table review_board(

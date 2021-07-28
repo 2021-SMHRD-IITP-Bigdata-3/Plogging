@@ -13,6 +13,8 @@ public class memberDTO {
 	private String userBoard;
 	private String memberPlogCount;
 	
+	
+	
 	public memberDTO(String memberId, String memberPw, String memberName, int memberAge, String memberPoint,
 			String memberAddr, String memberPlogOwn, int point, String userBoard, String memberPlogCount) {
 		super();
