@@ -229,4 +229,8 @@ create table notice(
 	constraint notice_post_fk foreign key (tip_off_number) references test11(report_number)
 );
 
+<<<<<<< HEAD
+
+=======
 insert into notice values('test', 1, 'test',sysdate,'test','test','test','test','test','test')
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-3/Plogging.git

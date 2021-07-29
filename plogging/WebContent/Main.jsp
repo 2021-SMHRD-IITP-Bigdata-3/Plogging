@@ -52,7 +52,7 @@ reviewBoardDTO info2 = (reviewBoardDTO) session.getAttribute("info2");
    <tr>
       <td>플로깅 기한 :<%if(dao.showOne(1) !=null){ %><span><%=dto.getBoardDate() %> </span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
       <!-- 기한!~!! -->
-      <td><div>사진<%if(info1 !=null){ %><span><%=info1.getNoticeImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
+      <td><div>사진<%if(dao2.showOne(1) !=null){ %><span><%=dto.getBoardImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
    </tr>
    <tr >
       <td>제한 인원수<%if(dao2.showOne(1) !=null){ %><span><%=dto2.getLimitedNumber() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
@@ -65,7 +65,7 @@ reviewBoardDTO info2 = (reviewBoardDTO) session.getAttribute("info2");
       <tr>
       <td>플로깅 기한 :<%if(dao.showOne(2) !=null){ %><span><%=dto.getBoardDate() %> </span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
       <!-- 기한!~!! -->
-      <td><div>사진<%if(info1 !=null){ %><span><%=info1.getNoticeImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
+      <td><div>사진<%if(dao2.showOne(2) !=null){ %><span><%=dto.getBoardImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
    </tr>
    <tr >
       <td>제한 인원수<%if(dao2.showOne(2) !=null){ %><span><%=dto2.getLimitedNumber() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
@@ -78,7 +78,7 @@ reviewBoardDTO info2 = (reviewBoardDTO) session.getAttribute("info2");
       <tr>
       <td>플로깅 기한 :<%if(dao.showOne(3) !=null){ %><span><%=dto.getBoardDate() %> </span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
       <!-- 기한!~!! -->
-      <td><div>사진<%if(info1 !=null){ %><span><%=info1.getNoticeImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
+      <td><div>사진<%if(dao2.showOne(3) !=null){ %><span><%=dto.getBoardImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
    </tr>
    <tr >
       <td>제한 인원수<%if(dao2.showOne(3) !=null){ %><span><%=dto2.getLimitedNumber() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
