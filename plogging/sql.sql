@@ -29,7 +29,7 @@ nocycle -- 반복지정
 게시판댓글 board_num
 create table board_num(
 	comments_number varchar2(100), -- 댓글 번호 
-	board_num varchar2(100), -- 게시물 번호
+	board_num number, -- 게시물 번호
 	member_id varchar2(100), -- 아이디
 	comments_pw varchar2(100), -- 댓글 비밀번호
 	comments_contents varchar2(100), -- 댓글 내용
