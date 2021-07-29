@@ -44,7 +44,7 @@ public class reviewServiceCon extends HttpServlet {
 		System.out.println("check : "+check);
 		System.out.println("run : "+run);
 		
-		reviewBoardDTO dto = new reviewBoardDTO(reviewNumber,memberId,noticeNumber,noticePost,userBoard,reviewDate,reviewImage,location,contents,reviewTitle,check,run);
+//		reviewBoardDTO dto = new reviewBoardDTO(reviewNumber,memberId,noticeNumber,noticePost,userBoard,reviewDate,reviewImage,location,contents,reviewTitle,check,run);
 		reviewBoardDAO dao = new reviewBoardDAO();
 		
 		response.sendRedirect("reviewMain.jsp");

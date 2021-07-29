@@ -1,3 +1,16 @@
+채팅 chat
+create table chattable(
+	num number,
+	member_id varchar(100),
+	content varchar(200),
+	day date);
+
+drop table chattable;
+
+select * from chattable;
+
+insert into CHATTABLE values('1','test','test', sysdate );
+	
 게시판 board
 create table board(
    board_num number primary key, -- 게시물 번호
