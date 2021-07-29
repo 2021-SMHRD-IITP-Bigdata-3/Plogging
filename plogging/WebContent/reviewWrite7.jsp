@@ -24,7 +24,7 @@
 	   <td style = "float : right"><input type ="button" value = "검색"></td>
 	</tr>
 	</table>
-	<form action = "" method = "post">
+	<form action = "reviewWriteServiceCon" method = "post">
 		<table border = "1px" >
 			<tr>
 				<td colspan = "4">
@@ -43,6 +43,9 @@
 				<td colspan = "4">
 					<textarea></textarea>	
 				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="작성완료"></td>
 			</tr>
 		</table>
 		<table>
