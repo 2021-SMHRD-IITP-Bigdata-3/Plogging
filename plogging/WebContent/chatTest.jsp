@@ -12,7 +12,7 @@
 		background-color: yellow;
 	}
 </style>
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>s
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 	<div id="main">
