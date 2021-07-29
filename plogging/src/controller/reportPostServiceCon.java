@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
+import Model.reportTestDAO;
+import Model.reportTestDTO;
+
 
 @WebServlet("/reportPostServiceCon")
 public class reportPostServiceCon extends HttpServlet {
@@ -56,17 +59,17 @@ public class reportPostServiceCon extends HttpServlet {
 		System.out.println(fileName);
 		
 //		// 제보테이블, 제보dto, 제보dao(업로드하는 메소드 만들기)
-//		BoardDTO dto = new BoardDTO(title, writer, fileName, content);
-//		BoardDAO dao = new BoardDAO();
-//		int cnt = dao.upload(dto);
-//		
-//		if(cnt>0) {
-//			System.out.println("이미지 업로드 성공");
-//		}else {
-//			System.out.println("이미지 업로드 실패");
-//		}
-//		
-//		response.sendRedirect("boardMain.jsp");
+		reportTestDTO dto = new reportTestDTO(lat, fileName, lng);
+		reportTestDAO dao = new reportTestDAO();
+		int cnt = dao.upload(dto);
+		
+		if(cnt>0) {
+			System.out.println("이미지 업로드 성공");
+		}else {
+			System.out.println("이미지 업로드 실패");
+		}
+		
+		response.sendRedirect("reportPostWrite.jsp");
 	}
 
 }

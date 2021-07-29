@@ -177,3 +177,16 @@ create table untitled(
 
 insert into(member_id,notice_number,point) values('test','test','test');
 
+
+CREATE SEQUENCE Report_num --시퀀스이름 EX_SEQ
+INCREMENT BY 1 --증감숫자 1
+START WITH 1 --시작숫자 1
+
+-- 제보 테이블 만들어보기 테스트용!
+create table test11(
+	report_number number primary key, -- 아이디
+	lat varchar2(100), -- 위도
+	img varchar2(100), -- 이미지
+	lng varchar2(100) -- 경도
+);
+select * from test11;
