@@ -1,3 +1,11 @@
+채팅 테이블
+create table chattable(
+	num number,
+	member_id varchar2(500),
+	content varchar2(500),
+	day date
+)
+
 게시판 board
 create table board(
    board_num number primary key, -- 게시물 번호
