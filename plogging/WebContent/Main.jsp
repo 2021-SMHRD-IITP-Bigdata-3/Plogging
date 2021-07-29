@@ -23,7 +23,7 @@
 <body>
 <%
 boardDAO dao = new boardDAO();
-boardDTO dto = dao.showOne(1);
+boardDTO dto = dao.showOne(4);
 
 
 notic_BoardDTO info1 = (notic_BoardDTO) session.getAttribute("info1");
