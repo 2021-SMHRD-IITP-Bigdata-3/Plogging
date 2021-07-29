@@ -217,3 +217,5 @@ create table notice(
 	constraint notice_pk primary key (notice_number),
 	constraint notice_post_fk foreign key (tip_off_number) references test11(report_number)
 );
+
+
