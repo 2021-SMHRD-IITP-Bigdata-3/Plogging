@@ -40,7 +40,7 @@ public class reviewWriteServiceCon extends HttpServlet {
 //		reviewBoardDTO dto = new reviewBoardDTO(reviewNumber,id,postDate,postPhoto,location,postContent,postTitle,checkBox,run);
 //		reviewBoardDAO dao = new reviewBoardDAO();
 		
-		response.sendRedirect("reviewWrite7.jsp");
+		response.sendRedirect("reviewMain.jsp");
 		
 		
 	}
