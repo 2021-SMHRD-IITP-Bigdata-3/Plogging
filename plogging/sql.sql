@@ -40,6 +40,7 @@ create table board_num(
 );
 
 insert into board_num(comments_number,board_num,member_id,comments_pw,comments_contents,comments_date) values('test','test','test','test','test','sysdate');
+drop table board_num;
 
 
 시퀀스 num_board_num
@@ -61,11 +62,14 @@ create table member(
 	member_plog_count number, -- 플로깅 횟수
 	constraint member_pk primary key (member_id)	
 );
+drop table member;
 
 insert into member(member_id,member_pw,member_name,member_age,member_point,member_addr,member_plog_own,point,user_board,member_plog_count) values('test','test','test',1,'test','test','o',1,'test',1);
 
 select * from member
 drop table member1;
+
+
 후기게시판 review_board
 create table review_board(
 	review_number number, --게시물 번호
@@ -84,6 +88,7 @@ create table review_board(
 	constraint notice_fk foreign key(notice_num) references notice(notice_number),
 	constraint tif_off_fk foreign key(tif_off_number) references tip_off(report_number)
 );
+
 drop table review_board;
 select * from review_board;
 insert into review_board(review_number,member_id,notice_number,notice_post,user_board,review_date,review_image,location,contents,review_title,checkBox,run) values(1,'test','test','test','test','sysdate','test','test','test','test','test','test');
@@ -103,7 +108,7 @@ create table map(
 	constraint map_pk primary key (gps)
 	constraint review_number_fk foreign key(review_number) references review_board(review_number)
 );
-
+--
 insert into map(gps,review_number) values('test',1);
 
 
@@ -130,14 +135,14 @@ create table tip_off(
 	img varchar2(100), -- 이미지
 	lng varchar2(100) -- 경도
 );
-
+drop table tip_off;
 쓰레기통 trashcan
 create table trashcan(
 	trashcan_number varchar2(100), -- 쓰레기통번호
 	trashcan_location varchar2(100), -- 쓰레기통위치
 	constraint tip_off_pk primary key (tip_off_number),
 );
-
+--
 지자체 local_governments
 create table local_governments(
 	notice_post varchar2(100), -- 제보게시글
@@ -146,7 +151,7 @@ create table local_governments(
 	notice_member varchar2(100), -- 참여자 목록
 	constraint local_governments_pk primary key (notice_post, point)
 );
-
+drop table local_governments;
 insert into(notice_post,point,local_id,notice_member) values('test','test','test','test');
 
 시퀀스 num_local_governments
@@ -166,7 +171,7 @@ create table untitled(
 	constraint notice_number_fk foreign key(notice_number) references notice(notice_number)
 	constraint point_fk foreign key(point) references local_governments(point)
 );
-
+--
 insert into(member_id,notice_number,point) values('test','test','test');
 
 
