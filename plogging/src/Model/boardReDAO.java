@@ -56,7 +56,7 @@ public class boardReDAO {
 		
 			psmt = conn.prepareStatement(sql);
 			
-			psmt.setString(1, dto.getCommentsNumber());
+			psmt.setInt(1, dto.getCommentsNumber());
 			psmt.setString(2, dto.getBoardNum());
 			psmt.setString(3, dto.getMemberID());
 			psmt.setString(4, dto.getCommentsPw());
@@ -72,24 +72,23 @@ public class boardReDAO {
 		} return cnt;
 	}
 	
-	public boardReDTO showOne(int num) {
+	public boardReDTO showOne(int commentsNumber) {
 		try {
 			conn();
-			String sql = "SELECT * FROM board WHERE num = ?";
+			String sql = "SELECT * FROM board WHERE board_num = ?";
 			
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, num);
+			psmt.setInt(1, commentsNumber);
 			rs = psmt.executeQuery();
 			
 			if(rs.next()) {
-				String commentsNumber = rs.getString(2);
-				String boardNum = rs.getString(3);
-				String memberID = rs.getString(4);
-				String commentsPw = rs.getString(5);
-				String commentsContents=rs.getString(6);
-				String commentsDate = rs.getString(7);
+				String boardNum = rs.getString(2);
+				String memberID = rs.getString(3);
+				String commentsPw = rs.getString(4);
+				String commentsContents = rs.getString(5);
+				String commentsDate=rs.getString(6);
 				
-				dto = new boardReDTO(num, commentsNumber, boardNum, memberID, commentsPw, commentsContents, commentsDate);
+				dto = new boardReDTO(commentsNumber, boardNum, memberID, commentsPw, commentsContents, commentsDate);
 				
 			}
 		} catch (SQLException e) {
