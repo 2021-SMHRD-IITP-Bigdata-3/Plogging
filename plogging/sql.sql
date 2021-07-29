@@ -131,6 +131,7 @@ create table notice(
 
 insert into notice(notice_number,user_board,notice_post,notice_date,notice_title,notice_image,notice_member,limited_number,address,plog_date)values('test','test','test','sysdate','test','test','test','test','test','test');
 
+select * from notice
 
 시퀀스 num_notice_number
 create sequence num_notice_number
@@ -155,7 +156,7 @@ create table tip_off(
 	tip_off_location varchar2(100), -- 제보 위치
 	tip_off_image varchar2(100), -- 제보 사진
 	constraint tip_off_pk primary key (tip_off_number),
-	constraint notice_number_fk foreign key(notice_number) references notice(notice_number),
+	constraint notice_number_fk foreign key(notice_number) references notice(notice_number)
 );
 
 쓰레기통 trashcan
@@ -226,4 +227,8 @@ create table notice(
 	constraint notice_post_fk foreign key (tip_off_number) references test11(report_number)
 );
 
+<<<<<<< HEAD
 
+=======
+insert into notice values('test', 1, 'test',sysdate,'test','test','test','test','test','test')
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-3/Plogging.git
