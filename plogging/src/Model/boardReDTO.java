@@ -2,23 +2,31 @@ package Model;
 
 public class boardReDTO {
 	
-	private int num;
-	private String commentsNumber;
+	private int commentsNumber;
 	private String boardNum;
 	private String memberID;
 	private String commentsPw;
 	private String commentsContents;
 	private String commentsDate;
-	public int getNum() {
-		return num;
+	
+	
+	
+	public boardReDTO(int commentsNumber, String boardNum, String memberID, String commentsPw,
+			String commentsContents, String commentsDate) {
+		super();
+		this.commentsNumber = commentsNumber;
+		this.boardNum = boardNum;
+		this.memberID = memberID;
+		this.commentsPw = commentsPw;
+		this.commentsContents = commentsContents;
+		this.commentsDate = commentsDate;
 	}
-	public void setNum(int num) {
-		this.num = num;
-	}
-	public String getCommentsNumber() {
+	
+	
+	public int getCommentsNumber() {
 		return commentsNumber;
 	}
-	public void setCommentsNumber(String commentsNumber) {
+	public void setCommentsNumber(int commentsNumber) {
 		this.commentsNumber = commentsNumber;
 	}
 	public String getBoardNum() {
@@ -51,18 +59,8 @@ public class boardReDTO {
 	public void setCommentsDate(String commentsDate) {
 		this.commentsDate = commentsDate;
 	}
-	public boardReDTO(int num, String commentsNumber, String boardNum, String memberID, String commentsPw,
-			String commentsContents, String commentsDate) {
-		super();
-		this.num = num;
-		this.commentsNumber = commentsNumber;
-		this.boardNum = boardNum;
-		this.memberID = memberID;
-		this.commentsPw = commentsPw;
-		this.commentsContents = commentsContents;
-		this.commentsDate = commentsDate;
-	}
 	
+
 	
 	
 
