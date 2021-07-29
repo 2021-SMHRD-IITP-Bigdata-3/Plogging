@@ -59,7 +59,7 @@ public class notic_BoardDAO {
 					conn();
 					String sql = "insert into notice values(num_notice_number.nextval, ?,?, sysdate,?,?,?,?,?,?)";
 					psmt = conn.prepareStatement(sql);
-					psmt.setString(1, dto.getUserBoard());
+					psmt.setInt(1, dto.getTip_off_number());
 					psmt.setString(2, dto.getNoticePost());
 					psmt.setString(3, dto.getNoticeTitle());
 					psmt.setString(4, dto.getNoticeImage());
@@ -88,7 +88,7 @@ public class notic_BoardDAO {
 					
 					while(rs.next()) {
 						int noticeNumber = rs.getInt("noticeNumber");
-						String userBoard = rs.getString("userBoard");
+						int tip_off_number = rs.getInt("tip_off_number");
 						String noticePost = rs.getString("noticePost");
 						String noticeDate = rs.getString("noticeDate");
 						String noticeTitle = rs.getString("noticeTitle");
@@ -98,7 +98,7 @@ public class notic_BoardDAO {
 						String address = rs.getString("address");
 						String plogDate = rs.getString("plogDate");
 						
-						notic_BoardDTO dto = new notic_BoardDTO(noticeNumber, userBoard, noticePost,noticeDate,noticeTitle, noticeImage,noticeMember,limitedNumber,address,plogDate);
+						notic_BoardDTO dto = new notic_BoardDTO(noticeNumber, tip_off_number, noticePost,noticeDate,noticeTitle, noticeImage,noticeMember,limitedNumber,address,plogDate);
 						notic_BoardDTO_list.add(dto);
 					}
 					
@@ -122,7 +122,8 @@ public class notic_BoardDAO {
 			         rs = psmt.executeQuery();
 			         
 			         if(rs.next()) {
-			            String userBoard = rs.getString("userBoard");
+			        	 
+						int tip_off_number = rs.getInt("tip_off_number");
 			            String noticePost = rs.getString("noticePost");
 			            String noticeDate = rs.getString("noticeDate");
 			            String noticeTitle = rs.getString("noticeTitle");
@@ -132,7 +133,7 @@ public class notic_BoardDAO {
 			            String address = rs.getString("address");
 			            String plogDate = rs.getString("plogDate");			            
 			            
-			            dto = new notic_BoardDTO(notice_number, userBoard,noticePost, noticeDate, noticeTitle, noticeImage, noticeMember,limitedNumber,address,plogDate);
+			            dto = new notic_BoardDTO(notice_number, tip_off_number,noticePost, noticeDate, noticeTitle, noticeImage, noticeMember,limitedNumber,address,plogDate);
 			         }
 			      } catch (SQLException e) {
 			         e.printStackTrace();
