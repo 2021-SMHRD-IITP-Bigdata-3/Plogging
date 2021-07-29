@@ -1,3 +1,5 @@
+<%@page import="Model.notic_BoardDAO"%>
+<%@page import="Model.reviewBoardDAO"%>
 <%@page import="Model.boardDAO"%>
 <%@page import="Model.reviewBoardDTO"%>
 <%@page import="Model.notic_BoardDTO"%>
@@ -25,6 +27,11 @@
 boardDAO dao = new boardDAO();
 boardDTO dto = dao.showOne(4);
 
+reviewBoardDAO dao1 = new reviewBoardDAO();
+reviewBoardDTO dto1 = dao1.showOne(1);
+
+notic_BoardDAO dao2 = new notic_BoardDAO();
+notic_BoardDTO dto2 = dao2.showOne(1);
 
 notic_BoardDTO info1 = (notic_BoardDTO) session.getAttribute("info1");
 reviewBoardDTO info2 = (reviewBoardDTO) session.getAttribute("info2");
@@ -43,12 +50,12 @@ reviewBoardDTO info2 = (reviewBoardDTO) session.getAttribute("info2");
 <table >
    <tr>맞춤형 공고</tr>
    <tr>
-      <td>플로깅 기한 :<%if(dto.getBoardDate() !=null){ %><span><%=dto.getBoardDate() %> </span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
+      <td>플로깅 기한 :<%if(dao.showOne(1) !=null){ %><span><%=dto.getBoardDate() %> </span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
       <!-- 기한!~!! -->
       <td><div>사진<%if(info1 !=null){ %><span><%=info1.getNoticeImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
    </tr>
    <tr >
-      <td>제한 인원수<%if(info1 !=null){ %><span><%=info1.getNoticeMember() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
+      <td>제한 인원수<%if(dao2.showOne(1) !=null){ %><span><%=dto2.getLimitedNumber() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
       <!-- 인원수 -->
    </tr>
    <tr>
@@ -56,12 +63,12 @@ reviewBoardDTO info2 = (reviewBoardDTO) session.getAttribute("info2");
       <!-- 인원수 -->
    </tr>
       <tr>
-      <td>플로깅 기한 :<%if(dto.getBoardDate() !=null){ %><span><%=dto.getBoardDate() %> </span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
+      <td>플로깅 기한 :<%if(dao.showOne(2) !=null){ %><span><%=dto.getBoardDate() %> </span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
       <!-- 기한!~!! -->
       <td><div>사진<%if(info1 !=null){ %><span><%=info1.getNoticeImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
    </tr>
    <tr >
-      <td>제한 인원수<%if(info1 !=null){ %><span><%=info1.getNoticeMember() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
+      <td>제한 인원수<%if(dao2.showOne(2) !=null){ %><span><%=dto2.getLimitedNumber() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
       <!-- 인원수 -->
    </tr>
    <tr>
@@ -69,12 +76,12 @@ reviewBoardDTO info2 = (reviewBoardDTO) session.getAttribute("info2");
       <!-- 인원수 -->
    </tr>
       <tr>
-      <td>플로깅 기한 :<%if(dto.getBoardDate() !=null){ %><span><%=dto.getBoardDate() %> </span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
+      <td>플로깅 기한 :<%if(dao.showOne(3) !=null){ %><span><%=dto.getBoardDate() %> </span><%}else{%><span>게시글이 없습니다.</span><%} %></td>
       <!-- 기한!~!! -->
       <td><div>사진<%if(info1 !=null){ %><span><%=info1.getNoticeImage() %></span></span><%}else{%><span>사진이 없습니다.</span><%} %></td></div></td>
    </tr>
    <tr >
-      <td>제한 인원수<%if(info1 !=null){ %><span><%=info1.getNoticeMember() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
+      <td>제한 인원수<%if(dao2.showOne(3) !=null){ %><span><%=dto2.getLimitedNumber() %></span></span><%}else{%><span>사람이 없습니다.</span><%} %></td>
       <!-- 인원수 -->
    </tr>
    <tr>
@@ -87,13 +94,13 @@ reviewBoardDTO info2 = (reviewBoardDTO) session.getAttribute("info2");
    <td>후기</td>
 </tr>   
 <tr>
-   <td>- <%if(info2 !=null){ %><span><%=info2.getReviewTitle() %></span></span><%}else{%><span>후기게시글이 없습니다.</span><%} %></td>
+   <td>- <%if(dao1.showOne(1) !=null){ %><span><%=dto1.getReviewTitle() %></span></span><%}else{%><span>후기게시글이 없습니다.</span><%} %></td>
 </tr>
 <tr>
-   <td>- <%if(info2 !=null){ %><span><%=info2.getReviewTitle() %></span></span><%}else{%><span>후기게시글이 없습니다.</span><%} %></td>
+   <td>- <%if(dao1.showOne(2) !=null){ %><span><%=dto1.getReviewTitle() %></span></span><%}else{%><span>후기게시글이 없습니다.</span><%} %></td>
 </tr>
 <tr>
-   <td>- <%if(info2 !=null){ %><span><%=info2.getReviewTitle() %></span></span><%}else{%><span>후기게시글이 없습니다.</span><%} %></td>
+   <td>- <%if(dao1.showOne(3) !=null){ %><span><%=dto1.getReviewTitle() %></span></span><%}else{%><span>후기게시글이 없습니다.</span><%} %></td>
 </tr>
 
 </table>
