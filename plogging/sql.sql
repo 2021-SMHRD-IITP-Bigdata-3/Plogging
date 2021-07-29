@@ -57,11 +57,8 @@ create table member(
 	member_pw varchar2(100), -- 비밀번호
 	member_name varchar2(100), -- 이름
 	member_age number, -- 나이
-	member_point varchar2(100), -- 보유적립금
 	member_addr varchar2(100), -- 주소지
 	member_plog_own char(20), -- 플로깅 참여 여부
-	point number, -- 적립금
-	user_board varchar2(100), -- 사용자 제보 게시물
 	member_plog_count number, -- 플로깅 횟수
 	constraint member_pk primary key (member_id)	
 );
@@ -75,20 +72,16 @@ create table review_board(
 	review_number number, --게시물 번호
 	member_id varchar2(100), -- 아이디
 	notice_number varchar2(100), -- 공고번호
-	notice_post varchar2(100), -- 제보게시물
-	user_board varchar2(100), -- 사용자 제보 게시물
 	review_date date, -- 작성일자
 	review_image varchar2(100), -- 게시물 사진
 	location varchar2(100), -- 위치정보
 	contents varchar2(1000), -- 게시글 내용
 	review_title varchar2(100), -- 게시글 제목
-	checkBox varchar2(100), --체크박스
+	checkBox varchar2(100), --종량제쓰레기리터
 	run varchar2(100), -- 거리
-	constraint review_board_pk primary key (review_number)
-	constraint member_id_fk foreign key(member_id) references member(member_id)
-	constraint notice_number_fk foreign key(notice_number) references notice(notice_number)
-	constraint notice_post_fk foreign key(notice_post) references local_governments(notice_post)
-	constraint user_board_fk foreign key(user_board) references notice(user_board)
+	constraint review_board_pk primary key (review_number),
+	constraint member_id_fk foreign key(member_id) references member(member_id),
+	constraint notice_number_fk foreign key(notice_number) references notice(notice_number),
 );
 
 insert into review_board(review_number,member_id,notice_number,notice_post,user_board,review_date,review_image,location,contents,review_title,checkBox,run) values(1,'test','test','test','test','sysdate','test','test','test','test','test','test');
@@ -114,8 +107,6 @@ insert into map(gps,review_number) values('test',1);
 공고 notice
 create table notice(
 	notice_number varchar2(100), -- 공고번호
-	user_board varchar2(100), -- 사용자 제보 게시물
-	notice_post varchar2(100), --제보게시물
 	notice_date date, -- 작성일자
 	notice_title varchar2(100), -- 게시글 제목
 	notice_image varchar2(100), -- 게시글 사진
@@ -123,8 +114,8 @@ create table notice(
 	limited_number varchar2(100), -- 제한 인원수
 	address varchar2(100), -- 지역 주소값
 	plog_date varchar2(100), -- 플로깅 날짜
-	constraint notice_pk primary key (notice_number, user_board),
-	constraint notice_post_fk foreign key(notice_post) references local_governments(notice_post)
+	user_board varchar2(100), -- 사용자 제보 게시물
+	constraint notice_pk primary key (notice_number),
 );
 
 insert into notice(notice_number,user_board,notice_post,notice_date,notice_title,notice_image,notice_member,limited_number,address,plog_date)values('test','test','test','sysdate','test','test','test','test','test','test');
@@ -145,6 +136,23 @@ increment by 1; -- 증감숫자
 minvalue -- 최소값
 maxvalue -- 최대값
 nocycle -- 반복지정
+
+제보 tip_off
+create table tip_off(
+	tip_off_number varchar2(100), -- 제보번호
+	notice_number varchar2(100), -- 공고 번호
+	tip_off_location varchar2(100), -- 제보 위치
+	tip_off_image varchar2(100), -- 제보 사진
+	constraint tip_off_pk primary key (tip_off_number),
+	constraint notice_number_fk foreign key(notice_number) references notice(notice_number),
+);
+
+쓰레기통 trashcan
+create table trashcan(
+	trashcan_number varchar2(100), -- 쓰레기통번호
+	trashcan_location varchar2(100), -- 쓰레기통위치
+	constraint tip_off_pk primary key (tip_off_number),
+);
 
 지자체 local_governments
 create table local_governments(
