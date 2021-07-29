@@ -53,18 +53,16 @@ public class reviewBoardDAO {
 			public int upload(reviewBoardDTO dto) {
 				try {
 					conn();
-					String sql = "insert into review_board values(num_review_board.nextval, ?,?,?,?, sysdate,?,?,?,?,?,?)";
+					String sql = "insert into review_board values(num_review_board.nextval, ?,?,sysdate,?,?,?,?,?,?)";
 					psmt = conn.prepareStatement(sql);
 					psmt.setString(1, dto.getMemberId());
 					psmt.setString(2, dto.getNoticeNumber());
-					psmt.setString(3, dto.getNoticePost());
-					psmt.setString(4, dto.getUserBoard());
-					psmt.setString(5, dto.getReviewImage());
-					psmt.setString(6, dto.getLocation());
-					psmt.setString(7, dto.getContents());
-					psmt.setString(8, dto.getReviewTitle());
-					psmt.setString(9, dto.getCheckBox());
-					psmt.setInt(10, dto.getRun());
+					psmt.setString(3, dto.getReviewImage());
+					psmt.setString(4, dto.getLocation());
+					psmt.setString(5, dto.getContents());
+					psmt.setString(6, dto.getReviewTitle());
+					psmt.setString(7, dto.getCheckBox());
+					psmt.setInt(8, dto.getRun());
 					
 					cnt = psmt.executeUpdate();
 					
@@ -88,8 +86,6 @@ public class reviewBoardDAO {
 						int reviewNumber = rs.getInt("reviewNumber");
 						String memberId = rs.getString("memberId");
 						String noticeNumber = rs.getString("noticeNumber");
-						String noticePost = rs.getString("noticePost");
-						String userBoard = rs.getString("userBoard");
 						String reviewDate = rs.getString("reviewDate");
 						String reviewImage = rs.getString("reviewImage");
 						String location = rs.getString("location");
@@ -98,7 +94,7 @@ public class reviewBoardDAO {
 						String checkBox = rs.getString("checkBox");
 						int run = rs.getInt("run");
 						
-						reviewBoardDTO dto = new reviewBoardDTO(reviewNumber, memberId, noticeNumber,noticePost,userBoard, reviewDate,reviewImage,location,contents,reviewTitle,checkBox,run);
+						reviewBoardDTO dto = new reviewBoardDTO(reviewNumber, memberId, noticeNumber, reviewDate,reviewImage,location,contents,reviewTitle,checkBox,run);
 						reviewBoard_list.add(dto);
 					}
 					
@@ -112,30 +108,28 @@ public class reviewBoardDAO {
 			}
 			
 			// 개별 게시글 보여주기 메소드
-			   public reviewBoardDTO showOne(int review_number) {
+			   public reviewBoardDTO showOne(int reviewNumber) {
 			      try {
 			         conn();
 			         String sql ="select * from review_board where review_number = ?";
 			         
 			         psmt = conn.prepareStatement(sql);
-			         psmt.setInt(1, review_number);
+			         psmt.setInt(1, reviewNumber);
 			         rs = psmt.executeQuery();
 			         
 			         if(rs.next()) {
-			            String memberId = rs.getString("memberId");
-			            String noticeNumber = rs.getString("noticeNumber");
-			            String noticePost = rs.getString("noticePost");
-			            String userBoard = rs.getString("userBoard");
-			            String reviewDate = rs.getString("reviewDate");
-			            String reviewImage = rs.getString("reviewImage");
-			            String location = rs.getString("location");
-			            String contents = rs.getString("contents");
-			            String reviewTitle = rs.getString("reviewTitle");
-			            String checkBox = rs.getString("checkBox");
-			            int run = rs.getInt("run");
+							String memberId = rs.getString("memberId");
+							String noticeNumber = rs.getString("noticeNumber");
+							String reviewDate = rs.getString("reviewDate");
+							String reviewImage = rs.getString("reviewImage");
+							String location = rs.getString("location");
+							String contents = rs.getString("contents");
+							String reviewTitle = rs.getString("reviewTitle");
+							String checkBox = rs.getString("checkBox");
+							int run = rs.getInt("run");
 			            
 			            
-			            dto = new reviewBoardDTO(review_number, memberId,noticeNumber, noticePost, userBoard, reviewDate, reviewImage,location,contents,reviewTitle,checkBox,run);
+			            dto = new reviewBoardDTO(reviewNumber, memberId, noticeNumber, reviewDate,reviewImage,location,contents,reviewTitle,checkBox,run);
 			         }
 			      } catch (SQLException e) {
 			         e.printStackTrace();

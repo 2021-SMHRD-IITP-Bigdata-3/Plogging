@@ -5,8 +5,6 @@ public class reviewBoardDTO {
 	private int reviewNumber;
 	private String memberId;
 	private String noticeNumber;
-	private String noticePost;
-	private String userBoard;
 	private String reviewDate;
 	private String reviewImage;
 	private String location;
@@ -16,15 +14,13 @@ public class reviewBoardDTO {
 	private int run;
 	
 	
-	public reviewBoardDTO(int reviewNumber, String memberId, String noticeNumber, String noticePost, String userBoard,
-			String reviewDate, String reviewImage, String location, String contents, String reviewTitle, String checkBox,
-			int run) {
+	
+	public reviewBoardDTO(int reviewNumber, String memberId, String noticeNumber, String reviewDate, String reviewImage,
+			String location, String contents, String reviewTitle, String checkBox, int run) {
 		super();
 		this.reviewNumber = reviewNumber;
 		this.memberId = memberId;
 		this.noticeNumber = noticeNumber;
-		this.noticePost = noticePost;
-		this.userBoard = userBoard;
 		this.reviewDate = reviewDate;
 		this.reviewImage = reviewImage;
 		this.location = location;
@@ -51,18 +47,6 @@ public class reviewBoardDTO {
 	}
 	public void setNoticeNumber(String noticeNumber) {
 		this.noticeNumber = noticeNumber;
-	}
-	public String getNoticePost() {
-		return noticePost;
-	}
-	public void setNoticePost(String noticePost) {
-		this.noticePost = noticePost;
-	}
-	public String getUserBoard() {
-		return userBoard;
-	}
-	public void setUserBoard(String userBoard) {
-		this.userBoard = userBoard;
 	}
 	public String getReviewDate() {
 		return reviewDate;
@@ -97,7 +81,7 @@ public class reviewBoardDTO {
 	public String getCheckBox() {
 		return checkBox;
 	}
-	public void getCheckBox(String checkBox) {
+	public void setCheckBox(String checkBox) {
 		this.checkBox = checkBox;
 	}
 	public int getRun() {
@@ -106,9 +90,8 @@ public class reviewBoardDTO {
 	public void setRun(int run) {
 		this.run = run;
 	}
-	
-	
 
+	
 	
 	
 }

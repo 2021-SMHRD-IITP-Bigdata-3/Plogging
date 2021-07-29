@@ -87,8 +87,10 @@ create table review_board(
 	run varchar2(100), -- °Å¸®
 	constraint review_board_pk primary key (review_number),
 	constraint member_id_fk foreign key(member_id) references member(member_id),
-	constraint notice_number_fk foreign key(notice_number) references notice(notice_number),
+	constraint notice_number_fk foreign key(notice_number) references notice(notice_number)
 );
+
+select * from review_board
 
 insert into review_board(review_number,member_id,notice_number,notice_post,user_board,review_date,review_image,location,contents,review_title,checkBox,run) values(1,'test','test','test','test','sysdate','test','test','test','test','test','test');
 
