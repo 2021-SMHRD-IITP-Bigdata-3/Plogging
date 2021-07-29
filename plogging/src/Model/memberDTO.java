@@ -6,36 +6,25 @@ public class memberDTO {
 	private String memberPw;
 	private String memberName;
 	private int memberAge;
-	private String memberPoint;
 	private String memberAddr;
 	private String memberPlogOwn;
-	private int point;
-	private String userBoard;
 	private String memberPlogCount;
 	
 	
-	
-	public memberDTO(String memberId, String memberPw, String memberName, int memberAge, String memberPoint,
-			String memberAddr, String memberPlogOwn, int point, String userBoard, String memberPlogCount) {
+	public memberDTO(String memberId, String memberPw, String memberName, int memberAge, String memberAddr,
+			String memberPlogOwn, String memberPlogCount) {
 		super();
 		this.memberId = memberId;
 		this.memberPw = memberPw;
 		this.memberName = memberName;
 		this.memberAge = memberAge;
-		this.memberPoint = memberPoint;
 		this.memberAddr = memberAddr;
 		this.memberPlogOwn = memberPlogOwn;
-		this.point = point;
-		this.userBoard = userBoard;
 		this.memberPlogCount = memberPlogCount;
 	}
 	
-
-
-/////
-
-
-
+	
+	
 	public memberDTO(String memberId, String memberPw, String memberName, int memberAge, String memberAddr,
 			String memberPlogCount) {
 		super();
@@ -46,13 +35,6 @@ public class memberDTO {
 		this.memberAddr = memberAddr;
 		this.memberPlogCount = memberPlogCount;
 	}
-
-
-
-
-
-
-
 
 
 
@@ -80,12 +62,6 @@ public class memberDTO {
 	public void setMemberAge(int memberAge) {
 		this.memberAge = memberAge;
 	}
-	public String getMemberPoint() {
-		return memberPoint;
-	}
-	public void setMemberPoint(String memberPoint) {
-		this.memberPoint = memberPoint;
-	}
 	public String getMemberAddr() {
 		return memberAddr;
 	}
@@ -98,18 +74,6 @@ public class memberDTO {
 	public void setMemberPlogOwn(String memberPlogOwn) {
 		this.memberPlogOwn = memberPlogOwn;
 	}
-	public int getPoint() {
-		return point;
-	}
-	public void setPoint(int point) {
-		this.point = point;
-	}
-	public String getUserBoard() {
-		return userBoard;
-	}
-	public void setUserBoard(String userBoard) {
-		this.userBoard = userBoard;
-	}
 	public String getMemberPlogCount() {
 		return memberPlogCount;
 	}
@@ -119,5 +83,6 @@ public class memberDTO {
 	
 	
 	
+
 	
 }

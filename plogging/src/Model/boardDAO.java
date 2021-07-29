@@ -64,7 +64,7 @@ public class boardDAO {
    public int upload(boardDTO dto) {
       try {
          conn();
-         String sql = "INSERT INTO board VALUES(num_board1.nextval, ?, sysdate, ?, ?, ?, )";
+         String sql = "INSERT INTO board VALUES(num_board1.nextval, ?, sysdate, ?, ?, ?)";
       
          psmt = conn.prepareStatement(sql);
          

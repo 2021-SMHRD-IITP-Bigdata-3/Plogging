@@ -96,15 +96,12 @@ public class memberDAO {
 				String memberPw = rs.getString(2);
 				String memberName = rs.getString(3);
 				int memberAge = rs.getInt(4);
-				String memberPoint = rs.getString(5);
-				String memberAddr = rs.getString(6);
-				String memberPlogOwn = rs.getString(7);
-				int point = rs.getInt(8);
-				String userBoard = rs.getString(9);
-				String memberPlogCount = rs.getString(10);
+				String memberAddr = rs.getString(5);
+				String memberPlogOwn = rs.getString(6);
+				String memberPlogCount = rs.getString(7);
 
 
-				info = new memberDTO(memberId, memberPw, memberName, memberAge, memberPoint, memberAddr,memberPlogOwn,point,userBoard,memberPlogCount);
+				info = new memberDTO(memberId, memberPw, memberName, memberAge, memberAddr,memberPlogOwn,memberPlogCount);
 			}
 
 		} catch (SQLException e) {
