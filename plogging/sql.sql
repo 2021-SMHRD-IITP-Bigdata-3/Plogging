@@ -154,7 +154,7 @@ create table tip_off(
 create table trashcan(
 	trashcan_number varchar2(100), -- 쓰레기통번호
 	trashcan_location varchar2(100), -- 쓰레기통위치
-	constraint tip_off_pk primary key (tip_off_number),
+	constraint trashcan_pk primary key (trashcan_number),
 );
 
 지자체 local_governments
