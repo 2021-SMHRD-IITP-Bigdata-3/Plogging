@@ -46,11 +46,11 @@ tr td a {
 <%
  	request.setCharacterEncoding("EUC-KR");
 
- String lat = request.getParameter("lat");
- String lng = request.getParameter("lng");
-
- System.out.println("latdd : " + lat);
- System.out.println("lngdd :" + lng);
+	 String lat = request.getParameter("lat");
+	 String lng = request.getParameter("lng");
+	
+	 System.out.println("latdd : " + lat);
+	 System.out.println("lngdd :" + lng);
  %>
 			  <input type="hidden" name="lat" id="lat">
 			  <input type="hidden" name="lng" id="lng">
