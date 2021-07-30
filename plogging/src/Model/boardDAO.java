@@ -67,12 +67,10 @@ public class boardDAO {
          String sql = "INSERT INTO board VALUES(num_board1.nextval, ?, sysdate, ?, ?, ?)";
       
          psmt = conn.prepareStatement(sql);
-         
          psmt.setString(1, dto.getMemberId());
-         psmt.setString(2, dto.getBoardContent());
+         psmt.setString(2, dto.gettextarea());
          psmt.setString(3, dto.getBoardTitle());
          psmt.setString(4, dto.getBoardImage());
-         
          cnt = psmt.executeUpdate();
          
       } catch (SQLException e) {

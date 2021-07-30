@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
 import Model.boardDAO;
 import Model.boardDTO;
 
@@ -14,28 +17,38 @@ import Model.boardDTO;
 public class BoardWriteServiceCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-request.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("EUC-KR");
 		
-		int num = Integer.parseInt(request.getParameter("num"));
-		String id = request.getParameter("id");
-		String postDate = request.getParameter("postDate");
-		String postPhoto = request.getParameter("postPhoto");
-		String postContent = request.getParameter("postContent");
-		String postTitle = request.getParameter("postTitle");
+		String savePath = request.getServletContext().getRealPath("img");
+		System.out.println(savePath);
 		
-		System.out.println("num : "+num);
-		System.out.println("id : "+id);
-		System.out.println("postDate : "+postDate);
-		System.out.println("postPhoto : "+postPhoto);
-		System.out.println("postContent : "+postContent);
-		System.out.println("postTitle : "+postTitle);
+		int maxSize = 5*1024*1024;
+		String encoding = "EUC-KR";
+		MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy());
+
 		
-		boardDTO dto = new boardDTO(num, id, postDate, postPhoto,postContent, postTitle);
+		String title = multi.getParameter("title");
+		String textarea = multi.getParameter("textarea");
+		String fileName = null;
+		if (multi.getFilesystemName("fileName") != null) {			
+			fileName = URLEncoder.encode(multi.getFilesystemName("fileName"), "EUC-KR");
+		}
+		System.out.println(title);
+	
+		System.out.println(textarea);
+		System.out.println(fileName);
+		
+		boardDTO dto = new boardDTO(title, fileName, textarea);
 		boardDAO dao = new boardDAO();
+		int cnt = dao.upload(dto);
 		
-		response.sendRedirect("BoardWrite9.jsp");
-		//
-		
+		if(cnt>0) {
+			System.out.println("이미지 업로드 성공");
+		}else {
+			System.out.println("이미지 업로드 실패");
+		}
+		response.sendRedirect("Board.jsp");
+
 	}
 
 }

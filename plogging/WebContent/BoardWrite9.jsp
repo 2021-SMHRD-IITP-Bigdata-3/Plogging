@@ -24,21 +24,22 @@
 	   <td style = "float : right"><input type ="button" value = "검색"></td>
 	</tr>
 	</table>
-	<form action = "" method = "post">
+	<form action = "BoardWriteServiceCon" method = "post" enctype = "multipart/form-data">
 		<table border = "1px" >
 			<tr>
 				<td colspan = "4">
-					<input type = "text" placeholder = "제목을 입력하세요." name ="title" >
+					제목<input type = "text" placeholder = "제목을 입력하세요." name ="title" >
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan = "4">
+					업로드 <input type = "file" name = "fileName">
 				</td>
 			</tr>
 			<tr>
 				<td colspan = "4">
-					업로드 <input type = "file">
-				</td>
-			</tr>
-			<tr>
-				<td colspan = "4">
-					<textarea rows="5" cols="50"></textarea>	
+					<textarea rows="5" cols="50" name="textarea"></textarea>	
 				</td>
 			</tr>
 			<tr>
@@ -47,6 +48,8 @@
 				</td>
 			</tr>
 		</table>
+		</form>
+		
 		<table>
 		<tr>
 	<td><input type="button" value="메인" name="main" onClick="location.href='Main.jsp'"></td>
@@ -63,7 +66,7 @@
 		   <td>제보</td>
 		</tr>
 		</table>
-	</form>
+	
 </div>
 
 </body>

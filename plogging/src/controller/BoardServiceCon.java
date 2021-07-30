@@ -19,12 +19,15 @@ public class BoardServiceCon extends HttpServlet {
 		
 		request.setCharacterEncoding("EUC-KR");
 		
-		int num = Integer.parseInt(request.getParameter("num"));
+		int num = Integer.parseInt(request.getParameter("num")); // name의 값을 받아온다.
 		String id = request.getParameter("id");
 		String postDate = request.getParameter("postDate");
 		String postPhoto = request.getParameter("postPhoto");
 		String postContent = request.getParameter("postContent");
 		String postTitle = request.getParameter("postTitle");
+		
+	
+		
 		
 		System.out.println("num : "+num);
 		System.out.println("id : "+id);
@@ -36,6 +39,12 @@ public class BoardServiceCon extends HttpServlet {
 		boardDTO dto = new boardDTO(num, id, postDate, postPhoto,postContent, postTitle);
 		boardDAO dao = new boardDAO();
 		
+		
+		if(cnt>0) {
+			System.out.println("게시판 업로드 전송 성공");
+		}else {
+			System.out.println("게시판 업로드 전솔 실패");
+		}
 		response.sendRedirect("Board.jsp");
 	}//
 
